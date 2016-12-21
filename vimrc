@@ -11,6 +11,7 @@
  Plugin 'gmarik/Vundle.vim'
 
  Plugin 'tpope/vim-rails'
+ Plugin 'stefanoverna/vim-i18n'
 
  "color scheme
  Plugin 'jpo/vim-railscasts-theme'
@@ -121,12 +122,14 @@
 
  "key map
  let mapleader="\<Space>"
- nmap <tab> V>
- nmap <s-tab> V<
+ " nmap <tab> V>
+ " nmap <s-tab> V<
  vmap <tab> >gv
  vmap <s-tab> <gv
  nmap <c-j> :m+1<CR>
  nmap <c-k> :m-2<CR>
+ imap <c-k> <Up>
+ imap <c-j> <Down>
 
  " next/prev quicklist item
  nmap <c-b> :cprevious<CR>
@@ -192,6 +195,11 @@
  let g:bookmark_center = 1
 
 
+ let g:EasyMotion_do_mapping = 0 " Disable default mappings
+ map  <Leader>w <Plug>(easymotion-bd-w)
+ nmap <Leader>w <Plug>(easymotion-overwin-w)
+ map  / <Plug>(easymotion-sn)
+ omap / <Plug>(easymotion-tn)
 
 
 
@@ -236,7 +244,11 @@ nmap ga <Plug>(EasyAlign)
 
 
 let g:rails_ctags_arguments = ['--languages=ruby --exclude=.git --exclude=log .']
+set diffopt+=vertical
 
+" vim-i18n
+vmap <Leader>z :call I18nTranslateString()<CR>
+vmap <Leader>dt :call I18nDisplayTranslation()<CR>
 
 " 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
