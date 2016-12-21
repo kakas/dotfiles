@@ -1,0 +1,15 @@
+[user]
+	name = kakas
+	email = shrimptrain@gmail.com
+[core]
+	excludesfile = /Users/kakas/.gitignore_global
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	br = branch
+	ffs = flow feature start
+	fff = flow feature finish
+	frs = flow release start
+	frf = flow release finish
+	aci = !git add . && git commit
