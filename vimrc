@@ -243,7 +243,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
-let g:rails_ctags_arguments = ['--languages=ruby --exclude=.git --exclude=log .']
+" let g:rails_ctags_arguments = ['--languages=ruby --exclude=.git --exclude=log .']
+let g:rails_catas_arguments = ['--regex-ruby=/(^|;)[ \t]*(class|module)[ \t]+([A-Z][[:alnum:]_]+(::[A-Z][[:alnum:]_]+)+)/\3/c,class,constant/']
 set diffopt+=vertical
 
 " vim-i18n
