@@ -89,3 +89,6 @@ alias r='rails'
 alias gblog="cd ~/blog && DEBUG=* everblog build && hexo s -go"
 alias ty="open -a typora"
 alias j='z'
+
+export NVM_DIR="/Users/kakas/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
