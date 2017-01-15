@@ -41,6 +41,7 @@
  Plugin 'pangloss/vim-javascript'
  Plugin 'isRuslan/vim-es6'
  Plugin 'mxw/vim-jsx'
+ Plugin 'posva/vim-vue'
 
  Plugin 'MarcWeber/vim-addon-mw-utils'
  Plugin 'tomtom/tlib_vim'
@@ -242,9 +243,6 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-
-" let g:rails_ctags_arguments = ['--languages=ruby --exclude=.git --exclude=log .']
-let g:rails_catas_arguments = ['--regex-ruby=/(^|;)[ \t]*(class|module)[ \t]+([A-Z][[:alnum:]_]+(::[A-Z][[:alnum:]_]+)+)/\3/c,class,constant/']
 set diffopt+=vertical
 
 " vim-i18n
@@ -259,3 +257,4 @@ let g:indent_guides_guide_size = 1
 
 let g:jsx_ext_required = 0
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.vue set filetype=html
