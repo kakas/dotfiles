@@ -52,6 +52,7 @@
 
  "program
  Plugin 'MattesGroeger/vim-bookmarks'
+ Plugin 'vim-syntastic/syntastic'
 
  "Git
  Plugin 'tpope/vim-fugitive'
@@ -258,3 +259,16 @@ let g:indent_guides_guide_size = 1
 let g:jsx_ext_required = 0
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.vue set filetype=html
+
+" -------------------------------
+" Plugin 'vim-syntastic/syntastic'
+" -------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint'
