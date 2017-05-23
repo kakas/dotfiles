@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-rails'
-Plugin 'stefanoverna/vim-i18n'
+" Plugin 'stefanoverna/vim-i18n'
 
 "color scheme
 Plugin 'jpo/vim-railscasts-theme'
@@ -32,6 +32,7 @@ Plugin 'rking/ag.vim'
 Plugin 'easymotion/vim-easymotion'
 
 "Edit
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-repeat'
@@ -52,7 +53,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 
 "program
 Plugin 'MattesGroeger/vim-bookmarks'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 
 "Git
 Plugin 'tpope/vim-fugitive'
@@ -207,16 +208,16 @@ omap / <Plug>(easymotion-tn)
 
 " Remove trailing whitespace when writing a buffer, but not for diff files.
 " From: Vigil <vim5632@rainslide.net>
-function RemoveTrailingWhitespace()
-  if &ft != "diff"
-    let b:curcol = col(".")
-    let b:curline = line(".")
-    silent! %s/\s\+$//
-    silent! %s/\(\s*\n\)\+\%$//
-    call cursor(b:curline, b:curcol)
-  endif
-endfunction
-autocmd BufWritePre * call RemoveTrailingWhitespace()
+" function RemoveTrailingWhitespace()
+  " if &ft != "diff"
+    " let b:curcol = col(".")
+    " let b:curline = line(".")
+    " silent! %s/\s\+$//
+    " silent! %s/\(\s*\n\)\+\%$//
+    " call cursor(b:curline, b:curcol)
+  " endif
+" endfunction
+" autocmd BufWritePre * call RemoveTrailingWhitespace()
 
 
 " The Silver Searcher
@@ -260,15 +261,25 @@ let g:jsx_ext_required = 0
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.vue set filetype=html
 
-" -------------------------------
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Plugin 'pangloss/vim-javascript'
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" let g:javascript_plugin_flow = 1
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Plugin 'kien/ctrlp.vim'
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:ctrlp_by_filename = 1
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin 'vim-syntastic/syntastic'
-" -------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint'
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 2
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_exec = 'eslint'

@@ -4,11 +4,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:`yarn global bin`"
+export PATH="./node_modules/.bin:$PATH"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="avit"
+# ZSH_THEME="steeef"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,9 +89,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gti='git'
 alias r='rails'
-alias gblog="cd ~/blog && DEBUG=* everblog build && hexo s -go"
-alias ty="open -a typora"
 alias j='z'
+alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs git branch -d'
 
 export NVM_DIR="/Users/kakas/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
