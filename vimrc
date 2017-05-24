@@ -10,50 +10,43 @@ call vundle#begin()
 "let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'tpope/vim-rails'
-" Plugin 'stefanoverna/vim-i18n'
-
-"color scheme
+" color scheme
 Plugin 'jpo/vim-railscasts-theme'
-" Plugin 'dolph/vim-colors-solarized-black'
-" Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kchmck/vim-coffee-script'
 
-"FileSystem
+" FileSystem Navigation
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
+Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
-
-"move
+Plugin 'tpope/vim-rails'
+Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'easymotion/vim-easymotion'
+" Plugin 'stefanoverna/vim-i18n'
 
-"Edit
+" Editor
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'tmhedberg/matchit'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'
-Plugin 'isRuslan/vim-es6'
-Plugin 'mxw/vim-jsx'
-Plugin 'posva/vim-vue'
-
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'    " vim-snipmate dependency
+Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
-Plugin 'jeetsukumaran/vim-buffergator'
+" Language Plugin
+Plugin 'pangloss/vim-javascript'
+Plugin 'isRuslan/vim-es6'
+Plugin 'mxw/vim-jsx'
 
-"program
-Plugin 'MattesGroeger/vim-bookmarks'
-" Plugin 'vim-syntastic/syntastic'
+" for ESlint rubocop
+Plugin 'vim-syntastic/syntastic'
 
 "Git
 Plugin 'tpope/vim-fugitive'
@@ -77,12 +70,9 @@ filetype plugin indent on    " required
 syntax on
 
 set t_Co=256
-" set synmaxcol=140
 set ttyfast
 set lazyredraw
 colorscheme railscasts
-" set background=dark
-" colorscheme solarized
 
 set guifont=Literation_Mono_Powerline:h14
 set shell=/bin/sh
@@ -123,14 +113,14 @@ set shiftround
 set list
 set listchars=tab:\|\ ,
 
+set diffopt+=vertical
+
 "key map
 let mapleader="\<Space>"
 " nmap <tab> V>
 " nmap <s-tab> V<
 vmap <tab> >gv
 vmap <s-tab> <gv
-nmap <c-j> :m+1<CR>
-nmap <c-k> :m-2<CR>
 imap <c-k> <Up>
 imap <c-j> <Down>
 
@@ -140,13 +130,8 @@ nmap <c-n> :cnext<CR>
 nmap K i<CR><ESC>
 set pastetoggle=<F12>
 
-map <F2> <ESC>:NERDTreeTabsToggle<CR>
 map q: :q
 
-let g:NERDSpaceDelims=1
-let g:NERDTreeWinPos = "right"
-let g:user_emmet_leader_key = '<C-e>'
-let g:buffergator_viewport_split_policy="B"
 
 
 
@@ -154,21 +139,58 @@ let g:buffergator_viewport_split_policy="B"
 
 
 
-"set airline
+
+
+
+" Make those debugger statements painfully obvious
+au BufEnter *.rb syn match error contained "\<binding.pry\>"
+au BufEnter *.rb syn match error contained "\<debugger\>"
+
+" automatically load the .vimrc file whenever you save it.
+au BufWritePost .vimrc so $MYVIMRC
+
+
+
+
+" 'nathanaelkane/vim-indent-guides'
+
+
+
+" ================ Plugin Settings ====================
+" === Plugin 'jpo/vim-railscasts-theme'
+" === Plugin 'bling/vim-airline'
+" === Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2
 let g:airline_powerline_fonts=1
-"enable tabline
 let g:airline#extensions#tabline#enabled = 1
-"set left separator
 let g:airline#extensions#tabline#left_sep = ' '
-"set left separator which are not editting
 let g:airline#extensions#tabline#left_alt_sep = '|'
-"show buffer number
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme='base16'
 
+" === Plugin 'scrooloose/nerdtree'
+" === Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
+let g:NERDTreeWinPos = "right"
+map <F2> <ESC>:NERDTreeTabsToggle<CR>
 
+" === Plugin 'jeetsukumaran/vim-buffergator'
+" === Plugin 'kien/ctrlp.vim'
+let g:ctrlp_by_filename = 1
 
+" === Plugin 'rking/ag.vim'
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+  nnoremap <Leader>f :Ag<SPACE>
+  " nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+endif
+
+" === Plugin 'tpope/vim-rails'
+" === Plugin 'MattesGroeger/vim-bookmarks'
 let g:bookmark_no_default_key_mappings = 1
 function! BookmarkMapKeys()
   nmap mm :BookmarkToggle<CR>
@@ -190,90 +212,48 @@ function! BookmarkUnmapKeys()
 endfunction
 autocmd BufEnter * :call BookmarkMapKeys()
 autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
-
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
 let g:bookmark_manage_per_buffer = 1
-" let g:bookmark_highlight_lines = 1
 let g:bookmark_center = 1
+let g:bookmark_disable_ctrlp = 1
 
-
+" === Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
+" === Plugin 'editorconfig/editorconfig-vim'
+" === Plugin 'tpope/vim-surround'
+" === Plugin 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims=1
 
+" === Plugin 'mattn/emmet-vim'
+let g:user_emmet_leader_key = '<C-e>'
 
-" Remove trailing whitespace when writing a buffer, but not for diff files.
-" From: Vigil <vim5632@rainslide.net>
-" function RemoveTrailingWhitespace()
-  " if &ft != "diff"
-    " let b:curcol = col(".")
-    " let b:curline = line(".")
-    " silent! %s/\s\+$//
-    " silent! %s/\(\s*\n\)\+\%$//
-    " call cursor(b:curline, b:curcol)
-  " endif
-" endfunction
-" autocmd BufWritePre * call RemoveTrailingWhitespace()
-
-
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-  nnoremap <Leader>f :Ag<SPACE>
-  " nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-endif
-
-
-" Make those debugger statements painfully obvious
-au BufEnter *.rb syn match error contained "\<binding.pry\>"
-au BufEnter *.rb syn match error contained "\<debugger\>"
-
-" automatically load the .vimrc file whenever you save it.
-" au BufWritePost .vimrc so $MYVIMRC
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
+" === Plugin 'tpope/vim-repeat'
+" === Plugin 'tmhedberg/matchit'
+" === Plugin 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-set diffopt+=vertical
-
-" vim-i18n
-vmap <Leader>z :call I18nTranslateString()<CR>
-vmap <Leader>dt :call I18nDisplayTranslation()<CR>
-
-" 'nathanaelkane/vim-indent-guides'
+" === Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=238
 hi IndentGuidesEven ctermbg=236
 let g:indent_guides_guide_size = 1
 
-let g:jsx_ext_required = 0
-autocmd BufNewFile,BufRead *.es6 set filetype=javascript.jsx
-autocmd BufNewFile,BufRead *.vue set filetype=html
-
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Plugin 'pangloss/vim-javascript'
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" === Plugin 'MarcWeber/vim-addon-mw-utils'    " vim-snipmate dependency
+" === Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
+" === Plugin 'garbas/vim-snipmate'
+" === Plugin 'honza/vim-snippets'
+" === Plugin 'pangloss/vim-javascript'
 " let g:javascript_plugin_flow = 1
-
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Plugin 'kien/ctrlp.vim'
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-let g:ctrlp_by_filename = 1
-
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Plugin 'vim-syntastic/syntastic'
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" === Plugin 'isRuslan/vim-es6'
+" === Plugin 'mxw/vim-jsx'
+" === Plugin 'vim-syntastic/syntastic'
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -283,3 +263,5 @@ let g:ctrlp_by_filename = 1
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_eslint_exec = 'eslint'
+" === Plugin 'tpope/vim-fugitive'
+" === Plugin 'airblade/vim-gitgutter'
