@@ -46,7 +46,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'mxw/vim-jsx'
 
 " for ESlint rubocop
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 
 "Git
 Plugin 'tpope/vim-fugitive'
@@ -253,15 +253,12 @@ let g:indent_guides_guide_size = 1
 " let g:javascript_plugin_flow = 1
 " === Plugin 'isRuslan/vim-es6'
 " === Plugin 'mxw/vim-jsx'
-" === Plugin 'vim-syntastic/syntastic'
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 2
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_javascript_eslint_exec = 'eslint'
+" === Plugin 'w0rp/ale'
+let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
+
+
+
+
+
