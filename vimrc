@@ -178,12 +178,9 @@ map <F2> <ESC>:NERDTreeTabsToggle<CR>
 let g:ctrlp_by_filename = 1
 
 " === Plugin 'rking/ag.vim'
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " ag is fast enough that CtrlP doesn't need to cache
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
   nnoremap <Leader>f :Ag<SPACE>
   " nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -250,11 +247,10 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'garbas/vim-snipmate'
 " === Plugin 'honza/vim-snippets'
 " === Plugin 'pangloss/vim-javascript'
-" let g:javascript_plugin_flow = 1
 " === Plugin 'isRuslan/vim-es6'
 " === Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 " === Plugin 'w0rp/ale'
-let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
 
