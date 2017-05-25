@@ -39,6 +39,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'    " vim-snipmate dependency
 Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'jiangmiao/auto-pairs'
 
 " Language Plugin
 Plugin 'pangloss/vim-javascript'
@@ -246,6 +247,7 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 " === Plugin 'garbas/vim-snipmate'
 " === Plugin 'honza/vim-snippets'
+" === Plugin 'jiangmiao/auto-pairs'
 " === Plugin 'pangloss/vim-javascript'
 " === Plugin 'isRuslan/vim-es6'
 " === Plugin 'mxw/vim-jsx'
