@@ -229,6 +229,7 @@ omap / <Plug>(easymotion-tn)
 let g:NERDSpaceDelims=1
 
 " === Plugin 'mattn/emmet-vim'
+let g:user_emmet_settings={'javascript.jsx': {'extends':'jsx'}}
 let g:user_emmet_leader_key = '<C-e>'
 
 " === Plugin 'tpope/vim-repeat'
