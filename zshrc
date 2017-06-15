@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:`yarn global bin`"
-export PATH="./node_modules/.bin:$PATH"
+# export PATH="./node_modules/.bin:$PATH"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -94,3 +94,5 @@ alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs
 
 export NVM_DIR="/Users/kakas/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

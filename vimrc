@@ -12,16 +12,15 @@ Plugin 'gmarik/Vundle.vim'
 
 " color scheme
 Plugin 'jpo/vim-railscasts-theme'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 " FileSystem Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-rails'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'easymotion/vim-easymotion'
 " Plugin 'stefanoverna/vim-i18n'
@@ -159,35 +158,34 @@ au BufWritePost .vimrc so $MYVIMRC
 
 " ================ Plugin Settings ====================
 " === Plugin 'jpo/vim-railscasts-theme'
-" === Plugin 'bling/vim-airline'
-" === Plugin 'vim-airline/vim-airline-themes'
-set laststatus=2
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='base16'
-
 " === Plugin 'scrooloose/nerdtree'
 " === Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
 let g:NERDTreeWinPos = "right"
 map <F2> <ESC>:NERDTreeTabsToggle<CR>
 
 " === Plugin 'jeetsukumaran/vim-buffergator'
+" === Plugin 'vim-ctrlspace/vim-ctrlspace'
+" let g:CtrlSpaceDefaultMappingKey = "<C-f>"
+let g:CtrlSpaceDefaultMappingKey = "<Leader><Leader>"
+let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
+let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
+let g:CtrlSpaceSaveWorkspaceOnExit = 1
+
 " === Plugin 'kien/ctrlp.vim'
 let g:ctrlp_by_filename = 1
 
-" === Plugin 'rking/ag.vim'
+" === Plugin 'jremmen/vim-ripgrep'
 if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
-  nnoremap <Leader>f :Ag<SPACE>
-  " nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+  let g:CtrlSpaceGlobCommand = 'rg --files --color=never ""'
+  nnoremap <Leader>f :Rg<SPACE>
 endif
 
 " === Plugin 'tpope/vim-rails'
+let g:rails_ctags_arguments = '--languages=ruby,javascript'
+
 " === Plugin 'MattesGroeger/vim-bookmarks'
 let g:bookmark_no_default_key_mappings = 1
 function! BookmarkMapKeys()
@@ -254,6 +252,8 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 " === Plugin 'w0rp/ale'
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
 
