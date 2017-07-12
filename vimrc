@@ -95,6 +95,7 @@ set smartcase
 
 set showmatch
 set matchtime=1
+set iskeyword+=-
 
 filetype on
 filetype indent on
@@ -165,11 +166,7 @@ map <F2> <ESC>:NERDTreeTabsToggle<CR>
 
 " === Plugin 'jeetsukumaran/vim-buffergator'
 " === Plugin 'vim-ctrlspace/vim-ctrlspace'
-" let g:CtrlSpaceDefaultMappingKey = "<C-f>"
 let g:CtrlSpaceDefaultMappingKey = "<Leader><Leader>"
-let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
-let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-let g:CtrlSpaceSaveWorkspaceOnExit = 1
 
 " === Plugin 'kien/ctrlp.vim'
 let g:ctrlp_by_filename = 1
@@ -254,6 +251,7 @@ let g:jsx_ext_required = 0
 " === Plugin 'w0rp/ale'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_scss_stylelint_executable = 'scsslint'
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
 
