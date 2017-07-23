@@ -20,7 +20,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-rails'
-Plugin 'jremmen/vim-ripgrep'
+Plugin 'rking/ag.vim'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'easymotion/vim-easymotion'
 " Plugin 'stefanoverna/vim-i18n'
@@ -85,7 +85,7 @@ set wrap
 set linebreak
 set cursorline
 set hidden
-set scrolloff=15
+set scrolloff=5
 set nobackup
 
 set hlsearch
@@ -134,27 +134,9 @@ set pastetoggle=<F12>
 map q: :q
 
 
-
-
-
-
-
-
-
-
-
 " Make those debugger statements painfully obvious
 au BufEnter *.rb syn match error contained "\<binding.pry\>"
 au BufEnter *.rb syn match error contained "\<debugger\>"
-
-" automatically load the .vimrc file whenever you save it.
-au BufWritePost .vimrc so $MYVIMRC
-
-
-
-
-" 'nathanaelkane/vim-indent-guides'
-
 
 
 " ================ Plugin Settings ====================
@@ -167,17 +149,17 @@ map <F2> <ESC>:NERDTreeTabsToggle<CR>
 " === Plugin 'jeetsukumaran/vim-buffergator'
 " === Plugin 'vim-ctrlspace/vim-ctrlspace'
 let g:CtrlSpaceDefaultMappingKey = "<Leader><Leader>"
+let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 
 " === Plugin 'kien/ctrlp.vim'
 let g:ctrlp_by_filename = 1
 
-" === Plugin 'jremmen/vim-ripgrep'
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+" === Plugin 'rking/ag.vim'
+if executable('ag')
+  nmap <leader>f :Ag<space>
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
-  let g:CtrlSpaceGlobCommand = 'rg --files --color=never ""'
-  nnoremap <Leader>f :Rg<SPACE>
 endif
 
 " === Plugin 'tpope/vim-rails'
