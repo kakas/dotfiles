@@ -92,6 +92,7 @@ alias vi=/usr/local/bin/vim
 alias r='rails'
 alias j='z'
 alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs git branch -d'
+alias bw='bin/webpack-dev-server'
 
 export NVM_DIR="/Users/kakas/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

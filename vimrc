@@ -240,7 +240,7 @@ let g:ale_linters = {
       \}
 let g:ale_scss_stylelint_executable = 'scsslint'
 let g:ale_ruby_rails_best_practices_executable = ''
-" let g:ale_ruby_rubocop_executable = ''
+let g:ale_ruby_rubocop_executable = ''
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
