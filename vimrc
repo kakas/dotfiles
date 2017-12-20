@@ -230,17 +230,17 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 " === Plugin 'w0rp/ale'
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:ale_javascript_eslint_executable = 'eslint'
+nmap <leader>j :ALENext<CR>
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+let g:ale_javascript_eslint_executable = 'eslint'
 let g:ale_linters = {
       \   'eruby': [],
       \   'javascript': ['eslint'],
       \}
 let g:ale_scss_stylelint_executable = 'scsslint'
 let g:ale_ruby_rails_best_practices_executable = ''
-let g:ale_ruby_rubocop_executable = ''
+" let g:ale_ruby_rubocop_executable = ''
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
