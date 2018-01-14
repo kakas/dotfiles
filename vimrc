@@ -74,7 +74,7 @@ set ttyfast
 set lazyredraw
 colorscheme railscasts
 
-set guifont=Literation_Mono_Powerline:h14
+set guifont=Monaco:h14
 set shell=/bin/sh
 set clipboard+=unnamed " sync system clipboard
 set number
@@ -134,6 +134,31 @@ set pastetoggle=<F12>
 
 map q: :q
 
+if has("gui_macvim")
+  " Press Ctrl-Tab to switch between open tabs (like browser tabs) to
+  " the right side. Ctrl-Shift-Tab goes the other way.
+  noremap <C-Tab> :tabnext<CR>
+  noremap <C-S-Tab> :tabprev<CR>
+
+  " Switch to specific tab numbers with Command-number
+  noremap <D-1> :tabn 1<CR>
+  noremap <D-2> :tabn 2<CR>
+  noremap <D-3> :tabn 3<CR>
+  noremap <D-4> :tabn 4<CR>
+  noremap <D-5> :tabn 5<CR>
+  noremap <D-6> :tabn 6<CR>
+  noremap <D-7> :tabn 7<CR>
+  noremap <D-8> :tabn 8<CR>
+  noremap <D-9> :tabn 9<CR>
+  " Command-0 goes to the last tab
+  noremap <D-0> :tablast<CR>
+
+  " open tag in new tab
+  nmap <silent><C-]> <C-w><C-]><C-w>T
+  nmap gf <C-w>gf
+endif
+
+
 
 " Make those debugger statements painfully obvious
 au BufEnter *.rb syn match error contained "\<binding.pry\>"
@@ -143,6 +168,7 @@ au BufEnter *.rb syn match error contained "\<debugger\>"
 " ================ Plugin Settings ====================
 " === Plugin 'jpo/vim-railscasts-theme'
 " === Plugin 'scrooloose/nerdtree'
+let g:nerdtree_tabs_open_on_gui_startup = 0
 " === Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
 let g:NERDTreeWinPos = "right"
 map <F2> <ESC>:NERDTreeTabsToggle<CR>
