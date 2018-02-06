@@ -156,6 +156,11 @@ if has("gui_macvim")
   " open tag in new tab
   nmap <silent><C-]> <C-w><C-]><C-w>T
   nmap gf <C-w>gf
+  nmap <F4> :let @+=expand("%:p")<CR>
+  " remove scrollbars
+  set guioptions=
+  " auto copy the mouse selection
+  set guioptions+=a
 endif
 
 
