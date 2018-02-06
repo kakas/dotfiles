@@ -19,6 +19,7 @@ Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'kien/ctrlp.vim'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'rking/ag.vim'
 Plugin 'MattesGroeger/vim-bookmarks'
@@ -39,6 +40,8 @@ Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'kopischke/vim-stay'
+Plugin 'Konfekt/FastFold'
 
 " Language Plugin
 Plugin 'pangloss/vim-javascript'
@@ -180,7 +183,7 @@ map <F2> <ESC>:NERDTreeTabsToggle<CR>
 
 " === Plugin 'jeetsukumaran/vim-buffergator'
 " === Plugin 'vim-ctrlspace/vim-ctrlspace'
-let g:CtrlSpaceDefaultMappingKey = "<Leader><Leader>"
+let g:CtrlSpaceDefaultMappingKey = "<Leader>s"
 let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 
 " === Plugin 'kien/ctrlp.vim'
@@ -193,6 +196,13 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" === Plugin 'vim-ruby/vim-ruby'
+set foldenable
+set foldcolumn=1
+set foldlevelstart=20
+let ruby_fold = 1
+let ruby_foldable_groups = 'def do'
 
 " === Plugin 'tpope/vim-rails'
 let g:rails_ctags_arguments = '--languages=ruby,javascript'
@@ -256,6 +266,12 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'garbas/vim-snipmate'
 " === Plugin 'honza/vim-snippets'
 " === Plugin 'jiangmiao/auto-pairs'
+" === Plugin 'kopischke/vim-stay'
+" === Plugin 'Konfekt/FastFold'
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['a']
+
 " === Plugin 'pangloss/vim-javascript'
 " === Plugin 'isRuslan/vim-es6'
 " === Plugin 'mxw/vim-jsx'
