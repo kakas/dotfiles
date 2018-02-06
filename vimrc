@@ -40,7 +40,6 @@ Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'kopischke/vim-stay'
 Plugin 'Konfekt/FastFold'
 
 " Language Plugin
@@ -199,7 +198,6 @@ endif
 
 " === Plugin 'vim-ruby/vim-ruby'
 set foldenable
-set foldcolumn=1
 set foldlevelstart=20
 let ruby_fold = 1
 let ruby_foldable_groups = 'def do'
@@ -266,7 +264,6 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'garbas/vim-snipmate'
 " === Plugin 'honza/vim-snippets'
 " === Plugin 'jiangmiao/auto-pairs'
-" === Plugin 'kopischke/vim-stay'
 " === Plugin 'Konfekt/FastFold'
 nmap zuz <Plug>(FastFoldUpdate)
 let g:fastfold_savehook = 1
