@@ -17,9 +17,8 @@ Plugin 'jpo/vim-railscasts-theme'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
 Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'vim-ctrlspace/vim-ctrlspace'
+" Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'kien/ctrlp.vim'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'rking/ag.vim'
 Plugin 'MattesGroeger/vim-bookmarks'
@@ -182,8 +181,8 @@ map <F2> <ESC>:NERDTreeTabsToggle<CR>
 
 " === Plugin 'jeetsukumaran/vim-buffergator'
 " === Plugin 'vim-ctrlspace/vim-ctrlspace'
-let g:CtrlSpaceDefaultMappingKey = "<Leader>s"
-let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+" let g:CtrlSpaceDefaultMappingKey = "<Leader>s"
+" let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 
 " === Plugin 'kien/ctrlp.vim'
 let g:ctrlp_by_filename = 1
@@ -195,12 +194,6 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
-
-" === Plugin 'vim-ruby/vim-ruby'
-set foldenable
-set foldlevelstart=20
-let ruby_fold = 1
-let ruby_foldable_groups = 'def do'
 
 " === Plugin 'tpope/vim-rails'
 let g:rails_ctags_arguments = '--languages=ruby,javascript'
@@ -266,8 +259,7 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'jiangmiao/auto-pairs'
 " === Plugin 'Konfekt/FastFold'
 nmap zuz <Plug>(FastFoldUpdate)
-let g:fastfold_savehook = 1
-let g:fastfold_fold_command_suffixes =  ['a']
+let g:fastfold_savehook = 0
 
 " === Plugin 'pangloss/vim-javascript'
 " === Plugin 'isRuslan/vim-es6'
@@ -288,8 +280,6 @@ let g:ale_ruby_rails_best_practices_executable = ''
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
-
-
 
 
 
