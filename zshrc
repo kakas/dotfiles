@@ -5,12 +5,17 @@
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:`yarn global bin`"
 export PATH="./node_modules/.bin:$PATH"
+export GOPATH=$HOME/projects/practice/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=~/Library/Python/2.7/bin:$PATH
+export EDITOR='vim'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="agnoster"
 ZSH_THEME="avit"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="steeef"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -88,13 +93,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gti='git'
-alias vi=/usr/local/bin/vim
+# alias vi=/usr/local/bin/vim
 alias r='rails'
+alias rs='rails s -b 0.0.0.0'
+alias rsp='SIMULATE_FISC_PAYMENT=true PORT=3001 rails s'
 alias j='z'
 alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs git branch -d'
 alias bw='bin/webpack-dev-server'
 alias ty="open -a typora $1"
-alias vim="open -a MacVim $1"
+# alias vim="open -a MacVim $1"
+alias vim='mvim'
+alias ip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 
 export NVM_DIR="/Users/kakas/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -103,3 +112,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"

@@ -16,7 +16,6 @@ Plugin 'jpo/vim-railscasts-theme'
 " FileSystem Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
-Plugin 'jeetsukumaran/vim-buffergator'
 " Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-rails'
@@ -24,6 +23,8 @@ Plugin 'rking/ag.vim'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'easymotion/vim-easymotion'
 " Plugin 'stefanoverna/vim-i18n'
+Plugin 'fatih/vim-go'
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 
 " Editor
 Plugin 'editorconfig/editorconfig-vim'
@@ -44,7 +45,8 @@ Plugin 'Konfekt/FastFold'
 " Language Plugin
 Plugin 'pangloss/vim-javascript'
 Plugin 'isRuslan/vim-es6'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 " for ESlint rubocop
 Plugin 'w0rp/ale'
@@ -88,6 +90,9 @@ set cursorline
 set hidden
 set scrolloff=5
 set nobackup
+set noswapfile
+set noundofile
+" set timeoutlen=200
 
 set hlsearch
 set incsearch
@@ -114,7 +119,8 @@ set smartindent
 set cino=:0 " set switch case indent
 set shiftround
 set list
-set listchars=tab:\|\ ,
+" set listchars=tab:\|\ ,
+set listchars=tab:\.\ ,
 
 set diffopt+=vertical
 
@@ -134,6 +140,9 @@ nmap K i<CR><ESC>
 set pastetoggle=<F12>
 
 map q: :q
+" no need escape in regexp
+nnoremap / /\v
+vnoremap / /\v
 
 if has("gui_macvim")
   " Press Ctrl-Tab to switch between open tabs (like browser tabs) to
@@ -177,16 +186,15 @@ au BufEnter *.rb syn match error contained "\<debugger\>"
 let g:nerdtree_tabs_open_on_gui_startup = 0
 " === Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
 let g:NERDTreeWinPos = "right"
-map <F2> <ESC>:NERDTreeTabsToggle<CR>
+map <F2> :NERDTreeTabsToggle<CR>
+map <leader><F2> :NERDTreeFind<CR>
 
-" === Plugin 'jeetsukumaran/vim-buffergator'
 " === Plugin 'vim-ctrlspace/vim-ctrlspace'
 " let g:CtrlSpaceDefaultMappingKey = "<Leader>s"
 " let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 
 " === Plugin 'kien/ctrlp.vim'
-let g:ctrlp_by_filename = 1
-
+" let g:ctrlp_by_filename = 1
 " === Plugin 'rking/ag.vim'
 if executable('ag')
   nmap <leader>f :Ag<space>
@@ -196,7 +204,17 @@ if executable('ag')
 endif
 
 " === Plugin 'tpope/vim-rails'
-let g:rails_ctags_arguments = '--languages=ruby,javascript'
+set confirm " to create alternate files
+" let g:rails_ctags_arguments = '--languages=ruby . $(bundle list --paths)'
+let g:rails_ctags_arguments = '--languages=ruby .'
+let g:rails_projections = {
+      \   "app/javascript/*/index.jsx": {
+      \     "alternate": "spec/javascript/{}.spec.js",
+      \   },
+      \   "spec/javascript/*.spec.js": {
+      \     "alternate": "app/javascript/{}/index.jsx"
+      \   },
+      \ }
 
 " === Plugin 'MattesGroeger/vim-bookmarks'
 let g:bookmark_no_default_key_mappings = 1
@@ -231,6 +249,15 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
+" === Plugin 'fatih/vim-go'
+let g:go_list_type = ""
+let g:go_doc_keywordprg_enabled = 0
+
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go setlocal iskeyword-=-
+
+" === Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 " === Plugin 'editorconfig/editorconfig-vim'
 " === Plugin 'tpope/vim-surround'
 " === Plugin 'scrooloose/nerdcommenter'
@@ -277,6 +304,7 @@ let g:ale_linters = {
 let g:ale_scss_stylelint_executable = 'scsslint'
 let g:ale_ruby_rails_best_practices_executable = ''
 " let g:ale_ruby_rubocop_executable = ''
+let g:ale_set_highlights = 0
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
