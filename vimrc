@@ -11,20 +11,21 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " color scheme
-Plugin 'jpo/vim-railscasts-theme'
+" Plugin 'jpo/vim-railscasts-theme'
+Plugin 'morhetz/gruvbox'
 
 " FileSystem Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
-" Plugin 'vim-ctrlspace/vim-ctrlspace'
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'rking/ag.vim'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'easymotion/vim-easymotion'
-" Plugin 'stefanoverna/vim-i18n'
 Plugin 'fatih/vim-go'
 Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
+Plugin 'jparise/vim-graphql'
 
 " Editor
 Plugin 'editorconfig/editorconfig-vim'
@@ -41,15 +42,15 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'Konfekt/FastFold'
+Plugin 'elzr/vim-json'
 
 " Language Plugin
 Plugin 'pangloss/vim-javascript'
 Plugin 'isRuslan/vim-es6'
-" Plugin 'mxw/vim-jsx'
 Plugin 'maxmellon/vim-jsx-pretty'
 
 " for ESlint rubocop
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 "Git
 Plugin 'tpope/vim-fugitive'
@@ -75,7 +76,7 @@ syntax on
 set t_Co=256
 set ttyfast
 set lazyredraw
-colorscheme railscasts
+colorscheme gruvbox
 
 set guifont=Monaco:h14
 set shell=/bin/sh
@@ -144,6 +145,11 @@ map q: :q
 nnoremap / /\v
 vnoremap / /\v
 
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+
 if has("gui_macvim")
   " Press Ctrl-Tab to switch between open tabs (like browser tabs) to
   " the right side. Ctrl-Shift-Tab goes the other way.
@@ -164,7 +170,7 @@ if has("gui_macvim")
   noremap <D-0> :tablast<CR>
 
   " open tag in new tab
-  nmap <silent><C-]> <C-w><C-]><C-w>T
+  " nmap <silent><C-]> <C-w><C-]><C-w>T
   nmap gf <C-w>gf
   nmap <F4> :let @+=expand("%:p")<CR>
   " remove scrollbars
@@ -181,17 +187,13 @@ au BufEnter *.rb syn match error contained "\<debugger\>"
 
 
 " ================ Plugin Settings ====================
-" === Plugin 'jpo/vim-railscasts-theme'
+" === Plugin 'morhetz/gruvbox'
 " === Plugin 'scrooloose/nerdtree'
 let g:nerdtree_tabs_open_on_gui_startup = 0
 " === Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
 let g:NERDTreeWinPos = "right"
 map <F2> :NERDTreeTabsToggle<CR>
 map <leader><F2> :NERDTreeFind<CR>
-
-" === Plugin 'vim-ctrlspace/vim-ctrlspace'
-" let g:CtrlSpaceDefaultMappingKey = "<Leader>s"
-" let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 
 " === Plugin 'kien/ctrlp.vim'
 " let g:ctrlp_by_filename = 1
@@ -205,15 +207,30 @@ endif
 
 " === Plugin 'tpope/vim-rails'
 set confirm " to create alternate files
-" let g:rails_ctags_arguments = '--languages=ruby . $(bundle list --paths)'
-let g:rails_ctags_arguments = '--languages=ruby .'
+let g:rails_ctags_arguments = '--languages=ruby . $(bundle list --paths)'
+" let g:rails_ctags_arguments = '--languages=ruby .'
 let g:rails_projections = {
       \   "app/javascript/*/index.jsx": {
-      \     "alternate": "spec/javascript/{}.spec.js",
+      \     "test": "spec/javascript/{}.spec.js",
       \   },
       \   "spec/javascript/*.spec.js": {
-      \     "alternate": "app/javascript/{}/index.jsx"
+      \     "test": "app/javascript/{}/index.jsx",
       \   },
+      \   "app/graphql/*.rb": {
+      \     "rubyMacro": ["graphql_name", "field", "description", "argument", "graphql_name", "type"],
+      \     "rubyHelper": ["context"],
+      \   },
+      \   "extras/*.rb": {
+      \     "test": "spec/extras/{}_spec.rb"
+      \   },
+      \   "spec/extras/*_spec.rb": {
+      \     "alternate": "extras/{}.rb"
+      \   },
+      \   "spec/factories/*.rb": {
+      \     "command": "factory",
+      \     "affinity": "collection",
+      \     "keywords": "factory sequence"
+      \   }
       \ }
 
 " === Plugin 'MattesGroeger/vim-bookmarks'
@@ -290,20 +307,25 @@ let g:fastfold_savehook = 0
 
 " === Plugin 'pangloss/vim-javascript'
 " === Plugin 'isRuslan/vim-es6'
-" === Plugin 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
 " === Plugin 'w0rp/ale'
 nmap <leader>j :ALENext<CR>
+" let g:ale_javascript_eslint_executable = 'eslint'
+" let g:ale_scss_stylelint_executable = 'scsslint'
+" let g:ale_ruby_rails_best_practices_executable = ''
+" let g:ale_ruby_rubocop_executable = ''
+
+let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
-let g:ale_javascript_eslint_executable = 'eslint'
 let g:ale_linters = {
-      \   'eruby': [],
-      \   'javascript': ['eslint'],
-      \}
-let g:ale_scss_stylelint_executable = 'scsslint'
-let g:ale_ruby_rails_best_practices_executable = ''
-" let g:ale_ruby_rubocop_executable = ''
+\   'eruby': [],
+\   'javascript': ['eslint'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
 let g:ale_set_highlights = 0
 
 " === Plugin 'tpope/vim-fugitive'

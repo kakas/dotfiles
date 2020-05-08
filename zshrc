@@ -96,20 +96,20 @@ alias gti='git'
 # alias vi=/usr/local/bin/vim
 alias r='rails'
 alias rs='rails s -b 0.0.0.0'
-alias rsp='SIMULATE_FISC_PAYMENT=true PORT=3001 rails s'
+alias rsp='SIMULATE_FISC_PAYMENT=true PORT=3001 foreman start -f Procfile'
 alias j='z'
 alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs git branch -d'
 alias bw='bin/webpack-dev-server'
 alias ty="open -a typora $1"
-# alias vim="open -a MacVim $1"
-alias vim='mvim'
+# default-value syntax: ${1:-word}
+alias vim='function _vim(){ open -a macvim ${1:-.}};_vim'
 alias ip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
-
-export NVM_DIR="/Users/kakas/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+alias flame="~/github/flamegraph.pl $1 > flame.svg"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+eval "`fnm env --multi`"
