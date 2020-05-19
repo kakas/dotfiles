@@ -309,24 +309,22 @@ let g:fastfold_savehook = 0
 " === Plugin 'isRuslan/vim-es6'
 " === Plugin 'w0rp/ale'
 nmap <leader>j :ALENext<CR>
-" let g:ale_javascript_eslint_executable = 'eslint'
-" let g:ale_scss_stylelint_executable = 'scsslint'
-" let g:ale_ruby_rails_best_practices_executable = ''
-" let g:ale_ruby_rubocop_executable = ''
 
 let g:ale_linters_explicit = 1
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
+let g:ale_fix_on_save = 1
+let g:ale_set_highlights = 0
+
 let g:ale_linters = {
 \   'eruby': [],
 \   'javascript': ['eslint'],
+\   'ruby': ['rubocop'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'css': ['prettier'],
 \}
-let g:ale_fix_on_save = 1
-let g:ale_set_highlights = 0
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
