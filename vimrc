@@ -51,6 +51,7 @@ Plugin 'maxmellon/vim-jsx-pretty'
 
 " for ESlint rubocop
 Plugin 'dense-analysis/ale'
+Plugin 'prettier/vim-prettier'
 
 "Git
 Plugin 'tpope/vim-fugitive'
@@ -321,10 +322,12 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
 \}
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'css': ['prettier'],
-\}
+
+" === Plugin 'prettier/vim-prettier'
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
+let g:prettier#exec_cmd_async = 1
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
