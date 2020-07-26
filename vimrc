@@ -146,6 +146,9 @@ map q: :q
 nnoremap / /\v
 vnoremap / /\v
 
+" do not jump when star search
+nnoremap * *``
+
 augroup FiletypeGroup
   autocmd!
   au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
