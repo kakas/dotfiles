@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export LANG="en_US.UTF-8"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:`yarn global bin`"
@@ -100,16 +102,21 @@ alias rsp='SIMULATE_FISC_PAYMENT=true PORT=3001 foreman start -f Procfile'
 alias j='z'
 alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs git branch -d'
 alias bw='bin/webpack-dev-server'
-alias ty="open -a typora $1"
+# alias ty="open -a typora $1"
 # default-value syntax: ${1:-word}
-alias vim='function _vim(){ open -a macvim ${1:-.}};_vim'
+# alias vim='function _vim(){ open -a macvim ${1:-.}};_vim'
+alias vim=mvim
 alias ip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
-alias flame="~/github/flamegraph.pl $1 > flame.svg"
+# alias flame="~/github/flamegraph.pl $1 > flame.svg"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 eval "`fnm env --multi`"
+
+# added by travis gem
+[ ! -s /Users/kakas/.travis/travis.sh ] || source /Users/kakas/.travis/travis.sh
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

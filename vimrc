@@ -17,15 +17,11 @@ Plugin 'morhetz/gruvbox'
 " FileSystem Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
-
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-rails'
 Plugin 'rking/ag.vim'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'fatih/vim-go'
 Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
-Plugin 'jparise/vim-graphql'
 
 " Editor
 Plugin 'editorconfig/editorconfig-vim'
@@ -36,22 +32,36 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tmhedberg/matchit'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'jiangmiao/auto-pairs'
+
+" vim-snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'    " vim-snipmate dependency
 Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 Plugin 'garbas/vim-snipmate'
+
+" snippets
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'epilande/vim-react-snippets'
+
+" folding
 Plugin 'Konfekt/FastFold'
-Plugin 'elzr/vim-json'
+Plugin 'pedrohdz/vim-yaml-folds'
+Plugin 'rlue/vim-fold-rspec'
 
 " Language Plugin
+Plugin 'tpope/vim-rails'
 Plugin 'pangloss/vim-javascript'
 Plugin 'isRuslan/vim-es6'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'elzr/vim-json'
+Plugin 'jparise/vim-graphql'
+Plugin 'fatih/vim-go'
+Plugin 'othree/html5.vim'
 
 " for ESlint rubocop
 Plugin 'dense-analysis/ale'
-Plugin 'prettier/vim-prettier'
+" Plugin 'prettier/vim-prettier'
 
 "Git
 Plugin 'tpope/vim-fugitive'
@@ -118,7 +128,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
-set cino=:0 " set switch case indent
+" set cino=:0 " set switch case indent
 set shiftround
 set list
 " set listchars=tab:\|\ ,
@@ -214,6 +224,24 @@ set confirm " to create alternate files
 let g:rails_ctags_arguments = '--languages=ruby . $(bundle list --paths)'
 " let g:rails_ctags_arguments = '--languages=ruby .'
 let g:rails_projections = {
+      \  "app/controllers/*_controller.rb": {
+      \      "test": [
+      \        "spec/requests/{}_request_spec.rb",
+      \        "spec/controllers/{}_controller_spec.rb",
+      \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \      "alternate": [
+      \        "spec/requests/{}_request_spec.rb",
+      \        "spec/controllers/{}_controller_spec.rb",
+      \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \   },
+      \   "spec/requests/*_request_spec.rb": {
+      \      "command": "request",
+      \      "alternate": "app/controllers/{}_controller.rb",
+      \      "template": "require 'rails_helper'\n\n" .
+      \        "RSpec.describe '{}' do\nend",
+      \   },
       \   "app/javascript/*/index.jsx": {
       \     "test": "spec/javascript/{}.spec.js",
       \   },
@@ -306,31 +334,38 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'honza/vim-snippets'
 " === Plugin 'jiangmiao/auto-pairs'
 " === Plugin 'Konfekt/FastFold'
-nmap zuz <Plug>(FastFoldUpdate)
-let g:fastfold_savehook = 0
+let g:fastfold_savehook = 1
+set foldlevelstart=20
 
 " === Plugin 'pangloss/vim-javascript'
 " === Plugin 'isRuslan/vim-es6'
-" === Plugin 'w0rp/ale'
+" === Plugin 'dense-analysis/ale'
 nmap <leader>j :ALENext<CR>
-
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_fix_on_save = 1
-let g:ale_set_highlights = 0
+let g:ale_set_highlights = 1
 
 let g:ale_linters = {
-\   'eruby': [],
+\   'eruby': ['rubocop'],
 \   'javascript': ['eslint'],
+\   'ruby': ['rubocop'],
+\   'yaml': ['yamllint'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['eslint', 'prettier'],
 \   'ruby': ['rubocop'],
 \}
 
 " === Plugin 'prettier/vim-prettier'
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#autoformat_config_present = 1
-let g:prettier#exec_cmd_async = 1
+" let g:prettier#autoformat = 1
+" let g:prettier#autoformat_require_pragma = 0
+" let g:prettier#autoformat_config_present = 1
+" let g:prettier#exec_cmd_async = 1
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
