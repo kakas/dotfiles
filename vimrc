@@ -149,6 +149,7 @@ imap <c-j> <Down>
 nmap <c-b> :cprevious<CR>
 nmap <c-n> :cnext<CR>
 nmap K i<CR><ESC>
+nmap <S-Enter> o<Esc>
 set pastetoggle=<F12>
 
 map q: :q
@@ -221,8 +222,7 @@ endif
 
 " === Plugin 'tpope/vim-rails'
 set confirm " to create alternate files
-let g:rails_ctags_arguments = '--languages=ruby . $(bundle list --paths)'
-" let g:rails_ctags_arguments = '--languages=ruby .'
+let g:rails_ctags_arguments = '--languages=Ruby,JavaScript . $(bundle list --paths)'
 let g:rails_projections = {
       \  "app/controllers/*_controller.rb": {
       \      "test": [

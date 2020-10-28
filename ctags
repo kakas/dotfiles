@@ -17,6 +17,7 @@
 --exclude=app/uploaders/**
 
 --exclude=node_modules
+--exclude=**/gems/**/*.js
 --exclude=*.min.js
 --exclude=*-min.js
 --exclude=jquery.*.js
