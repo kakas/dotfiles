@@ -331,6 +331,8 @@ let g:indent_guides_guide_size = 1
 " === Plugin 'MarcWeber/vim-addon-mw-utils'    " vim-snipmate dependency
 " === Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 " === Plugin 'garbas/vim-snipmate'
+let g:snipMate = { 'snippet_version' : 1 }
+
 " === Plugin 'honza/vim-snippets'
 " === Plugin 'jiangmiao/auto-pairs'
 " === Plugin 'Konfekt/FastFold'
