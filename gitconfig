@@ -2,7 +2,7 @@
 	name = kakas
 	email = shrimptrain@gmail.com
 [core]
-	excludesfile = /Users/kakas/.gitignore_global
+	excludesFile = ~/.gitignore
 	editor = vim
 	quotepath = false
 [alias]
