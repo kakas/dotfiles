@@ -115,7 +115,6 @@ alias ip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-eval "`fnm env --multi`"
 
 # added by travis gem
 [ ! -s /Users/kakas/.travis/travis.sh ] || source /Users/kakas/.travis/travis.sh

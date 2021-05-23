@@ -42,7 +42,7 @@ Plugin 'garbas/vim-snipmate'
 " snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'epilande/vim-react-snippets'
+" Plugin 'epilande/vim-react-snippets'
 
 " folding
 Plugin 'Konfekt/FastFold'
@@ -52,8 +52,9 @@ Plugin 'rlue/vim-fold-rspec'
 " Language Plugin
 Plugin 'tpope/vim-rails'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafOfTree/vim-vue-plugin'
 Plugin 'isRuslan/vim-es6'
-Plugin 'maxmellon/vim-jsx-pretty'
+" Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'elzr/vim-json'
 Plugin 'jparise/vim-graphql'
 Plugin 'fatih/vim-go'
@@ -114,6 +115,7 @@ set smartcase
 set showmatch
 set matchtime=1
 set iskeyword+=-
+set virtualedit=block
 
 filetype on
 filetype indent on
@@ -137,6 +139,7 @@ set listchars=tab:\.\ ,
 set diffopt+=vertical
 
 "key map
+nmap <F10> :bd<CR>
 let mapleader="\<Space>"
 " nmap <tab> V>
 " nmap <s-tab> V<
@@ -194,17 +197,18 @@ if has("gui_macvim")
   set guioptions+=a
 endif
 
-
-
 " Make those debugger statements painfully obvious
 au BufEnter *.rb syn match error contained "\<binding.pry\>"
 au BufEnter *.rb syn match error contained "\<debugger\>"
 
 
+" =====================================================
 " ================ Plugin Settings ====================
+" =====================================================
 " === Plugin 'morhetz/gruvbox'
 " === Plugin 'scrooloose/nerdtree'
 let g:nerdtree_tabs_open_on_gui_startup = 0
+
 " === Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
 let g:NERDTreeWinPos = "right"
 map <F2> :NERDTreeTabsToggle<CR>
@@ -328,13 +332,16 @@ hi IndentGuidesOdd  ctermbg=238
 hi IndentGuidesEven ctermbg=236
 let g:indent_guides_guide_size = 1
 
+" === Plugin 'jiangmiao/auto-pairs'
 " === Plugin 'MarcWeber/vim-addon-mw-utils'    " vim-snipmate dependency
 " === Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 " === Plugin 'garbas/vim-snipmate'
 let g:snipMate = { 'snippet_version' : 1 }
 
+" === Plugin 'SirVer/ultisnips'
 " === Plugin 'honza/vim-snippets'
-" === Plugin 'jiangmiao/auto-pairs'
+" === Plugin 'epilande/vim-react-snippets'
+
 " === Plugin 'Konfekt/FastFold'
 let g:fastfold_savehook = 1
 set foldlevelstart=20
@@ -342,7 +349,10 @@ set foldlevelstart=20
 " === Plugin 'pangloss/vim-javascript'
 " === Plugin 'isRuslan/vim-es6'
 " === Plugin 'dense-analysis/ale'
+
 nmap <leader>j :ALENext<CR>
+nmap <F12> :ALEFix<CR>
+
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
@@ -351,7 +361,6 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 0
 let g:ale_set_highlights = 1
-
 let g:ale_linters = {
 \   'eruby': ['rubocop'],
 \   'javascript': ['eslint'],
@@ -371,6 +380,3 @@ let g:ale_fixers = {
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
-
-
-
