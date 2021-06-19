@@ -34,15 +34,12 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'jiangmiao/auto-pairs'
 
-" vim-snipmate
+" snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'    " vim-snipmate dependency
 Plugin 'tomtom/tlib_vim'                 " vim-snipmate dependency
 Plugin 'garbas/vim-snipmate'
-
-" snippets
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-" Plugin 'epilande/vim-react-snippets'
 
 " folding
 Plugin 'Konfekt/FastFold'
