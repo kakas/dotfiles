@@ -48,6 +48,7 @@ Plugin 'rlue/vim-fold-rspec'
 
 " Language Plugin
 Plugin 'tpope/vim-rails'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafOfTree/vim-vue-plugin'
 Plugin 'isRuslan/vim-es6'
@@ -225,6 +226,14 @@ endif
 set confirm " to create alternate files
 let g:rails_ctags_arguments = '--languages=Ruby,JavaScript . $(bundle list --paths)'
 let g:rails_projections = {
+      \  "app/models/*.rb": {
+      \      "test": [
+      \        "spec/models/{}_spec.rb",
+      \      ],
+      \      "alternate": [
+      \        "spec/models/{}_spec.rb",
+      \      ],
+      \   },
       \  "app/controllers/*_controller.rb": {
       \      "test": [
       \        "spec/requests/{}_request_spec.rb",
