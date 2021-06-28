@@ -15,3 +15,5 @@
 --exclude=jquery.*.js
 --exclude=jquery-*.js
 
+--exclude=**/gems/**/*.js
+--exclude=vendor/**/*.js
