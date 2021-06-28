@@ -23,10 +23,6 @@ export EDITOR='vim'
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="agnoster"
-# ZSH_THEME="avit"
-# ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="steeef"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -103,11 +99,10 @@ source ~/.iterm2_shell_integration.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias gti='git'
-# alias vi=/usr/local/bin/vim
 alias r='rails'
-alias rs='rails s -b 0.0.0.0'
-alias rsp='SIMULATE_FISC_PAYMENT=true PORT=3001 foreman start -f Procfile'
+alias rs='rails s -p 3000 -b lvh.me'
 alias j='z'
 alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs git branch -d'
 alias bw='bin/webpack-dev-server'
@@ -115,11 +110,8 @@ alias bw='bin/webpack-dev-server'
 # default-value syntax: ${1:-word}
 # alias vim='function _vim(){ open -a macvim ${1:-.}};_vim'
 alias vim=mvim
-# alias ip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 alias ip="ifconfig en0 | grep 'inet ' | cut -d' ' -f2"
 # alias flame="~/github/flamegraph.pl $1 > flame.svg"
-
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
