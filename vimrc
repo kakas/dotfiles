@@ -236,21 +236,20 @@ let g:rails_projections = {
       \   },
       \  "app/controllers/*_controller.rb": {
       \      "test": [
+      \        "spec/requests/{}_spec.rb",
       \        "spec/requests/{}_request_spec.rb",
       \        "spec/controllers/{}_controller_spec.rb",
       \        "test/controllers/{}_controller_test.rb"
       \      ],
       \      "alternate": [
+      \        "spec/requests/{}_spec.rb",
       \        "spec/requests/{}_request_spec.rb",
       \        "spec/controllers/{}_controller_spec.rb",
       \        "test/controllers/{}_controller_test.rb"
       \      ],
       \   },
-      \   "spec/requests/*_request_spec.rb": {
-      \      "command": "request",
-      \      "alternate": "app/controllers/{}_controller.rb",
-      \      "template": "require 'rails_helper'\n\n" .
-      \        "RSpec.describe '{}' do\nend",
+      \   "spec/requests/*_spec.rb": {
+      \      "alternate": "app/controllers/{}_controller.rb"
       \   },
       \   "app/javascript/*/index.jsx": {
       \     "test": "spec/javascript/{}.spec.js",
@@ -367,13 +366,16 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 0
 let g:ale_set_highlights = 1
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {
 \   'eruby': ['rubocop'],
 \   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
 \   'yaml': ['yamllint'],
+\   'vue': ['eslint'],
 \}
 let g:ale_fixers = {
+\   'vue': ['eslint'],
 \   'javascript': ['eslint', 'prettier'],
 \   'ruby': ['rubocop'],
 \}
