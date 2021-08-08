@@ -120,6 +120,8 @@ filetype indent on
 filetype plugin on
 
 set encoding=utf-8
+set path+=~/project/openapply/app/models/fields
+set path+=~/project/openapply/app/models/fields_data
 
 "tab
 set tabstop=2
@@ -226,6 +228,17 @@ endif
 set confirm " to create alternate files
 let g:rails_ctags_arguments = '--languages=Ruby,JavaScript . $(bundle list --paths)'
 let g:rails_projections = {
+      \  "app/models/concerns/*.rb": {
+      \      "alternate": [
+      \        "spec/models/concerns/{}_spec.rb",
+      \        "spec/support/shared_examples/{}_spec.rb",
+      \      ],
+      \   },
+      \  "spec/support/shared_examples/*_spec.rb": {
+      \      "alternate": [
+      \        "app/models/concerns/{}.rb",
+      \      ],
+      \   },
       \  "app/models/*.rb": {
       \      "test": [
       \        "spec/models/{}_spec.rb",

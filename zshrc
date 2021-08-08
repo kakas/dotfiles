@@ -100,9 +100,10 @@ source ~/.iterm2_shell_integration.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias rspec="./bin/rspec"
 alias gti='git'
 alias r='rails'
-alias rs='rails s -p 3000 -b lvh.me'
+# alias rs='rails s -p 3000 -b lvh.me'
 alias j='z'
 alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs git branch -d'
 alias bw='bin/webpack-dev-server'
