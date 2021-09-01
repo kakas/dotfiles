@@ -102,7 +102,7 @@ source ~/.iterm2_shell_integration.zsh
 
 alias rspec="./bin/rspec"
 alias gti='git'
-alias r='rails'
+alias r='./bin/rails'
 # alias rs='rails s -p 3000 -b lvh.me'
 alias j='z'
 alias brclean='git branch --merged | egrep -v "(^\*|master|dev|release)" | xargs git branch -d'
@@ -129,3 +129,5 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

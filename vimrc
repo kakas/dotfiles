@@ -17,8 +17,10 @@ Plugin 'morhetz/gruvbox'
 " FileSystem Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
+" Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
+" Plugin 'rking/ag.vim'
+" Plugin 'jremmen/vim-ripgrep'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
@@ -189,7 +191,7 @@ if has("gui_macvim")
 
   " open tag in new tab
   " nmap <silent><C-]> <C-w><C-]><C-w>T
-  nmap gf <C-w>gf
+  " nmap gf <C-w>gf
   nmap <F4> :let @+=expand("%:p")<CR>
   " remove scrollbars
   set guioptions=
@@ -215,19 +217,36 @@ map <F2> :NERDTreeTabsToggle<CR>
 map <leader><F2> :NERDTreeFind<CR>
 
 " === Plugin 'kien/ctrlp.vim'
-" let g:ctrlp_by_filename = 1
+" === Plugin 'junegunn/fzf.vim'
+set rtp+=/usr/local/opt/fzf"
+nmap <C-P> :Files<CR>
+nmap <leader>f :Rg<space>
+
 " === Plugin 'rking/ag.vim'
-if executable('ag')
-  nmap <leader>f :Ag<space>
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-endif
+" if executable('ag')
+  " nmap <leader>f :Ag<space>
+  " set grepprg=ag\ --nogroup\ --nocolor
+  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " let g:ctrlp_use_caching = 0
+" endif
+
+" === Plugin 'jremmen/vim-ripgrep'
+" if executable('rg')
+  " nmap <leader>f :Rg<space>
+  " set grepprg=rg\ --color=never
+  " let g:ctrlp_user_command = 'rg %s --files -g "!db/migrate" -g "!*.sql"'
+  " let g:ctrlp_use_caching = 0
+" endif
 
 " === Plugin 'tpope/vim-rails'
 set confirm " to create alternate files
 let g:rails_ctags_arguments = '--languages=Ruby,JavaScript . $(bundle list --paths)'
 let g:rails_projections = {
+      \  "app/workers/*.rb": {
+      \      "alternate": [
+      \        "spec/workers/{}_spec.rb",
+      \      ],
+      \   },
       \  "app/models/concerns/*.rb": {
       \      "alternate": [
       \        "spec/models/concerns/{}_spec.rb",
@@ -259,6 +278,14 @@ let g:rails_projections = {
       \        "spec/requests/{}_request_spec.rb",
       \        "spec/controllers/{}_controller_spec.rb",
       \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \      "related": [
+      \        "app/views/nv/{}/{define}.haml",
+      \        "app/views/nv/{}/{define}.html.haml",
+      \        "app/views/nv/{}/{define}.js.erb",
+      \        "app/views/{}/{define}.haml",
+      \        "app/views/{}/{define}.html.haml",
+      \        "app/views/{}/{define}.js.erb",
       \      ],
       \   },
       \   "spec/requests/*_spec.rb": {
@@ -388,7 +415,7 @@ let g:ale_linters = {
 \   'vue': ['eslint'],
 \}
 let g:ale_fixers = {
-\   'vue': ['eslint'],
+\   'vue': ['eslint', 'prettier'],
 \   'javascript': ['eslint', 'prettier'],
 \   'ruby': ['rubocop'],
 \}
