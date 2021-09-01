@@ -17,10 +17,7 @@ Plugin 'morhetz/gruvbox'
 " FileSystem Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
-" Plugin 'kien/ctrlp.vim'
 Plugin 'junegunn/fzf.vim'
-" Plugin 'rking/ag.vim'
-" Plugin 'jremmen/vim-ripgrep'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
@@ -57,12 +54,10 @@ Plugin 'isRuslan/vim-es6'
 " Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'elzr/vim-json'
 Plugin 'jparise/vim-graphql'
-Plugin 'fatih/vim-go'
 Plugin 'othree/html5.vim'
 
 " for ESlint rubocop
 Plugin 'dense-analysis/ale'
-" Plugin 'prettier/vim-prettier'
 
 "Git
 Plugin 'tpope/vim-fugitive'
@@ -216,27 +211,10 @@ let g:NERDTreeWinPos = "right"
 map <F2> :NERDTreeTabsToggle<CR>
 map <leader><F2> :NERDTreeFind<CR>
 
-" === Plugin 'kien/ctrlp.vim'
 " === Plugin 'junegunn/fzf.vim'
 set rtp+=/usr/local/opt/fzf"
 nmap <C-P> :Files<CR>
 nmap <leader>f :Rg<space>
-
-" === Plugin 'rking/ag.vim'
-" if executable('ag')
-  " nmap <leader>f :Ag<space>
-  " set grepprg=ag\ --nogroup\ --nocolor
-  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " let g:ctrlp_use_caching = 0
-" endif
-
-" === Plugin 'jremmen/vim-ripgrep'
-" if executable('rg')
-  " nmap <leader>f :Rg<space>
-  " set grepprg=rg\ --color=never
-  " let g:ctrlp_user_command = 'rg %s --files -g "!db/migrate" -g "!*.sql"'
-  " let g:ctrlp_use_caching = 0
-" endif
 
 " === Plugin 'tpope/vim-rails'
 set confirm " to create alternate files
@@ -347,10 +325,6 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
-" === Plugin 'fatih/vim-go'
-let g:go_list_type = ""
-let g:go_doc_keywordprg_enabled = 0
-
 autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go setlocal iskeyword-=-
@@ -385,12 +359,12 @@ let g:snipMate = { 'snippet_version' : 1 }
 
 " === Plugin 'SirVer/ultisnips'
 " === Plugin 'honza/vim-snippets'
-" === Plugin 'epilande/vim-react-snippets'
 
 " === Plugin 'Konfekt/FastFold'
 let g:fastfold_savehook = 1
 set foldlevelstart=20
 
+" === Plugin 'kchmck/vim-coffee-script'
 " === Plugin 'pangloss/vim-javascript'
 " === Plugin 'isRuslan/vim-es6'
 " === Plugin 'dense-analysis/ale'
@@ -419,12 +393,6 @@ let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
 \   'ruby': ['rubocop'],
 \}
-
-" === Plugin 'prettier/vim-prettier'
-" let g:prettier#autoformat = 1
-" let g:prettier#autoformat_require_pragma = 0
-" let g:prettier#autoformat_config_present = 1
-" let g:prettier#exec_cmd_async = 1
 
 " === Plugin 'tpope/vim-fugitive'
 " === Plugin 'airblade/vim-gitgutter'
