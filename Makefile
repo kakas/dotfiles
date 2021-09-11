@@ -4,6 +4,7 @@ init:
 	ln -fs `pwd`/gitconfig ~/.gitconfig
 	ln -fs `pwd`/editorconfig ~/.editorconfig
 	ln -fs `pwd`/ctags ~/.ctags
+	ln -fs `pwd`/fzf.zsh ~/.fzf.zsh
 
 sync:
 	git pull
