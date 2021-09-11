@@ -8,8 +8,6 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export PATH="$PATH:`yarn global bin`"
-export PATH="./node_modules/.bin:$PATH"
 export PATH=~/Library/Python/2.7/bin:$PATH
 export EDITOR='vim'
 
@@ -77,5 +75,7 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export PATH="$PATH:`yarn global bin`"
+export PATH="./node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
