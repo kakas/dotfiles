@@ -83,6 +83,7 @@ syntax on
 set t_Co=256
 set ttyfast
 set lazyredraw
+
 colorscheme gruvbox
 
 set guifont=Monaco:h14
@@ -118,7 +119,9 @@ filetype plugin on
 
 set encoding=utf-8
 set path+=~/project/openapply/app/models/fields
+set path+=~/project/openapply/app/models/fields/concerns
 set path+=~/project/openapply/app/models/fields_data
+set path+=~/project/openapply/app/models/fields_data/concerns
 
 "tab
 set tabstop=2
@@ -137,6 +140,7 @@ set diffopt+=vertical
 
 "key map
 nmap <F10> :bd<CR>
+nmap <F8> :so $MYVIMRC<CR>
 let mapleader="\<Space>"
 " nmap <tab> V>
 " nmap <s-tab> V<
@@ -203,6 +207,8 @@ au BufEnter *.rb syn match error contained "\<debugger\>"
 " ================ Plugin Settings ====================
 " =====================================================
 " === Plugin 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark='hard'
+
 " === Plugin 'scrooloose/nerdtree'
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
@@ -215,10 +221,14 @@ map <leader><F2> :NERDTreeFind<CR>
 set rtp+=/usr/local/opt/fzf"
 nmap <C-P> :Files<CR>
 nmap <leader>f :Rg<space>
+let g:fzf_preview_window = ['up:80%', 'ctrl-/']
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+
 
 " === Plugin 'tpope/vim-rails'
 set confirm " to create alternate files
-let g:rails_ctags_arguments = '--languages=Ruby,JavaScript . $(bundle list --paths)'
+" let g:rails_ctags_arguments = '--languages=Ruby,JavaScript . $(bundle list --paths)'
+let g:rails_ctags_arguments = '--languages=Ruby,JavaScript .'
 let g:rails_projections = {
       \  "app/workers/*.rb": {
       \      "alternate": [
@@ -392,6 +402,7 @@ let g:ale_fixers = {
 \   'vue': ['eslint', 'prettier'],
 \   'javascript': ['eslint', 'prettier'],
 \   'ruby': ['rubocop'],
+\   'xml': ['xmllint'],
 \}
 
 " === Plugin 'tpope/vim-fugitive'
