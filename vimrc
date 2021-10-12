@@ -52,7 +52,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'leafOfTree/vim-vue-plugin'
 Plugin 'isRuslan/vim-es6'
 " Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'elzr/vim-json'
+" Plugin 'elzr/vim-json'
 Plugin 'jparise/vim-graphql'
 Plugin 'othree/html5.vim'
 
@@ -83,8 +83,6 @@ syntax on
 set t_Co=256
 set ttyfast
 set lazyredraw
-
-colorscheme gruvbox
 
 set guifont=Monaco:h14
 set shell=/bin/sh
@@ -208,6 +206,7 @@ au BufEnter *.rb syn match error contained "\<debugger\>"
 " =====================================================
 " === Plugin 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 " === Plugin 'scrooloose/nerdtree'
 let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -390,19 +389,21 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 0
 let g:ale_set_highlights = 1
-let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+" let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {
 \   'eruby': ['rubocop'],
 \   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
 \   'yaml': ['yamllint'],
 \   'vue': ['eslint'],
+\   'scss': ['prettier'],
 \}
 let g:ale_fixers = {
-\   'vue': ['eslint', 'prettier'],
-\   'javascript': ['eslint', 'prettier'],
+\   'vue': ['eslint'],
+\   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
 \   'xml': ['xmllint'],
+\   'scss': ['prettier'],
 \}
 
 " === Plugin 'tpope/vim-fugitive'
