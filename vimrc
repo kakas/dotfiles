@@ -110,6 +110,7 @@ set showmatch
 set matchtime=1
 set iskeyword+=-
 set virtualedit=block
+set mmp=2000
 
 filetype on
 filetype indent on
@@ -156,8 +157,8 @@ set pastetoggle=<F12>
 
 map q: :q
 " no need escape in regexp
-nnoremap / /\v
-vnoremap / /\v
+" nnoremap / /\v
+" vnoremap / /\v
 
 " do not jump when star search
 nnoremap * *``
@@ -256,33 +257,56 @@ let g:rails_projections = {
       \  "app/controllers/*_controller.rb": {
       \      "test": [
       \        "spec/requests/{}_spec.rb",
-      \        "spec/requests/{}_request_spec.rb",
       \        "spec/controllers/{}_controller_spec.rb",
       \        "test/controllers/{}_controller_test.rb"
       \      ],
       \      "alternate": [
       \        "spec/requests/{}_spec.rb",
-      \        "spec/requests/{}_request_spec.rb",
       \        "spec/controllers/{}_controller_spec.rb",
       \        "test/controllers/{}_controller_test.rb"
       \      ],
       \      "related": [
       \        "app/views/nv/{}/{define}.haml",
       \        "app/views/nv/{}/{define}.html.haml",
+      \        "app/views/nv/{}/{define}.html.erb",
       \        "app/views/nv/{}/{define}.js.erb",
       \        "app/views/{}/{define}.haml",
       \        "app/views/{}/{define}.html.haml",
       \        "app/views/{}/{define}.js.erb",
       \      ],
       \   },
+      \  "app/controllers/nv/*_controller.rb": {
+      \      "test": [
+      \        "spec/requests/{}_spec.rb",
+      \        "spec/controllers/{}_controller_spec.rb",
+      \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \      "alternate": [
+      \        "spec/requests/{}_spec.rb",
+      \        "spec/controllers/{}_controller_spec.rb",
+      \        "test/controllers/{}_controller_test.rb"
+      \      ],
+      \      "related": [
+      \        "app/views/{}/{define}.haml",
+      \        "app/views/{}/{define}.html.haml",
+      \        "app/views/{}/{define}.html.erb",
+      \        "app/views/{}/{define}.js.erb",
+      \      ],
+      \   },
       \   "spec/requests/*_spec.rb": {
       \      "alternate": "app/controllers/{}_controller.rb"
       \   },
-      \   "app/javascript/*/index.jsx": {
-      \     "test": "spec/javascript/{}.spec.js",
+      \   "lib/tasks/*.rake": {
+      \      "alternate": "spec/lib/tasks/{}_spec.rb"
+      \   },
+      \   "spec/lib/tasks/*_spec.rb": {
+      \      "alternate": "lib/tasks/{}.rake"
+      \   },
+      \   "app/javascript/*.vue": {
+      \     "alternate": "spec/javascript/{}.spec.js",
       \   },
       \   "spec/javascript/*.spec.js": {
-      \     "test": "app/javascript/{}/index.jsx",
+      \     "alternate": "app/javascript/{}.vue",
       \   },
       \   "app/graphql/*.rb": {
       \     "rubyMacro": ["graphql_name", "field", "description", "argument", "graphql_name", "type"],
