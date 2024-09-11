@@ -10,21 +10,23 @@ call vundle#begin()
 "let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" vscode
+Plugin 'tpope/vim-surround'
+Plugin 'easymotion/vim-easymotion'
+
 " color scheme
 " Plugin 'jpo/vim-railscasts-theme'
 Plugin 'morhetz/gruvbox'
 
 " FileSystem Navigation
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
-Plugin 'junegunn/fzf.vim'
-Plugin 'MattesGroeger/vim-bookmarks'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'jistr/vim-nerdtree-tabs'    "nerdtree enhancement
+" Plugin 'junegunn/fzf.vim'
+" Plugin 'MattesGroeger/vim-bookmarks'
+" Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 
 " Editor
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-repeat'

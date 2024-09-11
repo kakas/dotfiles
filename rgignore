@@ -1,0 +1,5 @@
+*.svg
+*.sql
+public/wechat/js/**/*.js
+vendor/**/**.*
+app/javascript/vendor/**/**.*
