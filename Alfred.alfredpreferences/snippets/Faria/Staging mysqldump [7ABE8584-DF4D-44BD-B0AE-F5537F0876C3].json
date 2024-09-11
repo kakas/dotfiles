@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "mysqldump --host=openapply-ca-stage.cgi3baj8utl4.ca-central-1.rds.amazonaws.com -u master -p openapply-devel-05 > tmp\/openapply-devel-05.sql --set-gtid-purged=OFF",
+    "dontautoexpand" : true,
+    "uid" : "7ABE8584-DF4D-44BD-B0AE-F5537F0876C3",
+    "name" : "Staging mysqldump",
+    "keyword" : ""
+  }
+}

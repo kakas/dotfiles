@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "def get_full_processlist\n  result = ActiveRecord::Base.connection.execute(\"SHOW FULL PROCESSLIST\")\n\n  columns = result.fields\n  result.map do |row|\n    columns.zip(row).to_h\n  end\nend\n\ndef write_processlist_to_file(processlist)\n  File.open(Rails.root.join('log\/processlist.log'), 'a') do |file|\n    file.puts \"Timestamp: #{Time.now}\"\n    processlist.each do |row|\n      file.puts row\n    end\n  end\nend\n\nloop do\n  processlist = get_full_processlist\n  processlist = processlist.select { |row| row['Command'] == 'Query' && row['State'] == 'executing' }\n\n  write_processlist_to_file(processlist) if !processlist.empty?\n\n  sleep(60)\nend",
+    "dontautoexpand" : true,
+    "uid" : "FD6F5A76-2F33-4B71-A2F5-33E4AADDB123",
+    "name" : "show mysql processlist",
+    "keyword" : ""
+  }
+}

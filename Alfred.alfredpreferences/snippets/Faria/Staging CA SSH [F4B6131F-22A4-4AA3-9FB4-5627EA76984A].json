@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ssh -t openapply-stage-standalone 'cd \/srv\/openapply-devel-01\/current; bash --login'",
+    "dontautoexpand" : true,
+    "uid" : "F4B6131F-22A4-4AA3-9FB4-5627EA76984A",
+    "name" : "Staging CA SSH",
+    "keyword" : ""
+  }
+}

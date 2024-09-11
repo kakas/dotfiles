@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{\n  \"query\": {\n    \"bool\": {\n      \"should\": [\n        {\n          \"match\": {\n            \"path\": \"\/suppl\/forms\/50687\/student\/8099742\/id\/1820581\/steps\/2\"\n          }\n        },\n        {\n          \"match\": {\n            \"path\": \"\/suppl\/forms\/50687\/8099742\"\n          }\n        },\n        {\n          \"match\": {\n            \"path\": \"\/suppl\/confirm\/8099742\/50687\/1820581\"\n          }\n        },\n        {\n          \"match\": {\n            \"path\": \"\/suppl\/forms\/50687\/student\/8099742\"\n          }\n        },\n        {\n          \"match\": {\n            \"path\": \"\/admin\/students\/8099742\"\n          }\n        }\n      ]\n    }\n  }\n}",
+    "dontautoexpand" : true,
+    "uid" : "F07DAE9F-0FEF-4D73-8D74-F1402ACE5B2C",
+    "name" : "opensearch",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "find . -type l -ls",
+    "dontautoexpand" : true,
+    "uid" : "951A2173-79AC-480F-929F-D473E0AC3991",
+    "name" : "find symbolic link on ubuntu",
+    "keyword" : ""
+  }
+}

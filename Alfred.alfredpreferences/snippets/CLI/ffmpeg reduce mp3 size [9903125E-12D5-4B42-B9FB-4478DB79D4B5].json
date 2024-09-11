@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ffmpeg -i input.file -map 0:a:0 -b:a 96k output.mp3",
+    "dontautoexpand" : true,
+    "uid" : "9903125E-12D5-4B42-B9FB-4478DB79D4B5",
+    "name" : "ffmpeg reduce mp3 size",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "bundle exec cap ca-production aws:print_app_instances",
+    "dontautoexpand" : true,
+    "uid" : "665AFB65-72EC-4F50-B306-8509A6269AFB",
+    "name" : "ip Production CA",
+    "keyword" : ""
+  }
+}

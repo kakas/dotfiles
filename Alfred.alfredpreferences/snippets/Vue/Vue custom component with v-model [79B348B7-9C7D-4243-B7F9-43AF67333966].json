@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "<div id=\"app\">\n  <custom-input v-model:foo=\"bar\"><\/custom-input>\n<\/div>\n\nconst app = Vue.createApp({\n  data() {\n    return {\n      bar: '小明',\n\n      text: '這是文字片段 1',\n      text2: '這是文字片段 2'\n    }\n  }\n});\n\n\/\/ $emit('update:foo', $event.target.value) 搭配 props，可以將更新後的值寫回 v-model 內\napp.component('custom-input', {\n  props: ['foo'],\n  template: `<input type=\"text\"\n  :value=\"foo\"\n  @input=\"$emit('update:foo', $event.target.value)\"\n  class=\"form-control\">`\n});\n\n",
+    "dontautoexpand" : true,
+    "uid" : "79B348B7-9C7D-4243-B7F9-43AF67333966",
+    "name" : "Vue custom component with v-model",
+    "keyword" : ""
+  }
+}

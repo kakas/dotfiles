@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "let(:school) { _school }\nlet(:user) { school.users.first }\n\nbefore do\n  admin_login(user)\nend\n\n    subject(:send_request) do\n      host! \"#{school.subdomain}.example.com\"\n      headers = { 'ACCEPT' => 'application\/json', 'AUTH-TOKEN' => Rails.application.secrets.keybridge_api_key }\n      get \"\/admin\", params:, headers: \n    end\n\n    let(:params) do\n    end\n",
+    "dontautoexpand" : true,
+    "uid" : "1B543449-DF92-4874-B4E0-B6D56449851C",
+    "name" : "request send",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "STAGE_NO=01 bundle exec cap stage passenger:restart",
+    "dontautoexpand" : true,
+    "uid" : "8CE44595-B586-4BAF-9931-362AE2E139A4",
+    "name" : "Staging passenger restart",
+    "keyword" : ""
+  }
+}

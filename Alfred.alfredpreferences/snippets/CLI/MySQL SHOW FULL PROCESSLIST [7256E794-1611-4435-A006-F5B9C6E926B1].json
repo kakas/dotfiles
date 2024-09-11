@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SHOW FULL PROCESSLIST \\G;",
+    "dontautoexpand" : true,
+    "uid" : "7256E794-1611-4435-A006-F5B9C6E926B1",
+    "name" : "MySQL SHOW FULL PROCESSLIST",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "bundle install && yarn && bundle exec rails db:migrate && bundle exec rails db:test:prepare",
+    "dontautoexpand" : true,
+    "uid" : "B89AAE24-D2D9-4CB0-B1A4-A86D9FA929E7",
+    "name" : "project refresh",
+    "keyword" : ""
+  }
+}

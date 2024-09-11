@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "rg old --files-with-matches | xargs sed -i '' 's\/old\/new\/g'",
+    "dontautoexpand" : true,
+    "uid" : "D87AB331-B231-471B-8A02-905EA7C03852",
+    "name" : "Shell batch replacement",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "bundle exec cap ca-production deploy:rollback ROLLBACK_RELEASE=20240119104041",
+    "dontautoexpand" : true,
+    "uid" : "E2045594-8797-4121-B89B-76C41CADE315",
+    "name" : "rollback production ca",
+    "keyword" : ""
+  }
+}

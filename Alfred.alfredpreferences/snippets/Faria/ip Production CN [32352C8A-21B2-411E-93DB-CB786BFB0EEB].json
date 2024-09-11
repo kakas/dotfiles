@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "bundle exec cap cn-production aws:print_app_instances",
+    "dontautoexpand" : true,
+    "uid" : "32352C8A-21B2-411E-93DB-CB786BFB0EEB",
+    "name" : "ip Production CN",
+    "keyword" : ""
+  }
+}

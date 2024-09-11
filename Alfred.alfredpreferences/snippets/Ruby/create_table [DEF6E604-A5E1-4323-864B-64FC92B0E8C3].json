@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "create_table t.table_name do |t|\n  t.string :string_column_name, null: false, default: '', limit: 255, collation: 'utf8mb4_unicode_ci', comment: ''\n  t.text :text_column_name, null: false, default: '', limit: 255, collation: 'utf8mb4_unicode_ci'\n  t.integer :integer_column_name, null: false, default: 0, limit: 255\n  t.bigint :bigint_column_name\n  # t.float not recommended\n  t.decimal :decimal_column_name, precision: 10, scale: 2\n  # t.numeric\n  t.datetime :datetime_column_name, precision: 2\n  t.time :time_column_name, precision: 2\n  t.date :date_column_name\n  t.binary :binary_column_name, limit: 2.megabytes\n  t.blob :blob_column_name\n  t.boolean :boolean_column_name, null: false, default: false\nend",
+    "dontautoexpand" : true,
+    "uid" : "DEF6E604-A5E1-4323-864B-64FC92B0E8C3",
+    "name" : "create_table",
+    "keyword" : ""
+  }
+}

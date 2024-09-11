@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "THE_FILE=\"xxx.csv\"; scp $THE_FILE openapply-ca-prod-app:\/srv\/openapply\/current\/tmp\/$THE_FILE",
+    "dontautoexpand" : true,
+    "uid" : "F48F06FC-2CEB-47DB-A7AD-FAE40B6704B3",
+    "name" : "Production CA scp upload",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "school = School.find_by(subdomain: 'pamojaeducation')\nstudent = school.students.find_by(id: )\nstudent.pamoja_courses\n",
+    "dontautoexpand" : true,
+    "uid" : "91F3DB6F-82A6-4A4B-98B2-1747B797C8E2",
+    "name" : "find pamoja school",
+    "keyword" : ""
+  }
+}

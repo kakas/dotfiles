@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "Time.current.strftime('%b %d, %Y') # \"Oct 08, 2021\"\nTime.current.strftime('%b %-d, %Y') # \"Oct 8, 2021\"\nTime.current.strftime('%Y-%m-%d') # \"2021-10-08\"",
+    "dontautoexpand" : true,
+    "uid" : "6094794C-0288-4368-9432-2C3587268F48",
+    "name" : "strftime",
+    "keyword" : ""
+  }
+}

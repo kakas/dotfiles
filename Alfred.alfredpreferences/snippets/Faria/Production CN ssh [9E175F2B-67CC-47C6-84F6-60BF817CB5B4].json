@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ssh openapply-cn-prod-app",
+    "dontautoexpand" : true,
+    "uid" : "9E175F2B-67CC-47C6-84F6-60BF817CB5B4",
+    "name" : "Production CN ssh",
+    "keyword" : ""
+  }
+}

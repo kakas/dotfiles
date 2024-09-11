@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "sql = <<~SQL\nSQL\n\ndef print_sql_explain(sql, except_columns: ['possible_keys'])\n  records = ActiveRecord::Base.connection.execute('EXPLAIN ' + sql)\n  records_array = records.to_a\n  headers = records.fields\n  max_length = headers.map.with_index do |header, index|\n    data = records_array.map { |record| record[index] }\n    [header, *data].map(&:to_s).map(&:length).max\n  end\n\n  ignored_column_indexs = except_columns.map { |column| headers.index(column) }\n\n  headers = headers.map.with_index do |header, index|\n    next if index.in?(ignored_column_indexs)\n    header.ljust(max_length[index]) + \" | \"\n  end\n\n  records_array_1 = records_array.map do |record|\n    record.map.with_index do |value, index|\n      next if index.in?(ignored_column_indexs)\n      value.to_s.ljust(max_length[index]) + \" | \"\n    end\n  end\n\n  [headers, *records_array_1].each do |record|\n    puts record.join(\"\")\n  end\nend\n\nprint_sql_explain(sql)\n# bundle exec rails runner sql_explain.rb\n",
+    "dontautoexpand" : true,
+    "uid" : "5AA4B7EC-3D7A-4BAE-9A48-271F4E9E8C79",
+    "name" : "explain raw sql",
+    "keyword" : ""
+  }
+}

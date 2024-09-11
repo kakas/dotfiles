@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "BRANCH=hotfix\/parent-redesign-deploy bundle exec cap ca-production deploy",
+    "dontautoexpand" : true,
+    "uid" : "1B09D160-9283-4609-B056-308C57C63969",
+    "name" : "deploy Production CA",
+    "keyword" : ""
+  }
+}

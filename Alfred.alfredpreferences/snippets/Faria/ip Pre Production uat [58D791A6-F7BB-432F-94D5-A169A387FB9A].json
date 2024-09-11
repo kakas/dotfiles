@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "bundle exec cap ca-uat aws:print_app_instances",
+    "dontautoexpand" : true,
+    "uid" : "58D791A6-F7BB-432F-94D5-A169A387FB9A",
+    "name" : "ip Pre Production uat",
+    "keyword" : ""
+  }
+}

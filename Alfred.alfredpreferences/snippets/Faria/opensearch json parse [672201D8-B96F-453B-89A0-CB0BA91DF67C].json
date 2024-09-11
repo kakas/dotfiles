@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "json_file = File.read(Rails.root.join(\"request.json\"))\nrequest_json = JSON.parse(json_file)\ndata = JSON.parse(request_json[\"_source\"][\"params\"])[\"params\"][\"student\"]\ndata = data.with_indifferent_access\n",
+    "dontautoexpand" : true,
+    "uid" : "672201D8-B96F-453B-89A0-CB0BA91DF67C",
+    "name" : "opensearch json parse",
+    "keyword" : ""
+  }
+}

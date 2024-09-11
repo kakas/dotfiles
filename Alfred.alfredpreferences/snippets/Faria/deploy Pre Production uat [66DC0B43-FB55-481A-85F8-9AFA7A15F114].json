@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "BRANCH=release\/01042024 bundle exec cap ca-uat deploy",
+    "dontautoexpand" : true,
+    "uid" : "66DC0B43-FB55-481A-85F8-9AFA7A15F114",
+    "name" : "deploy Pre Production uat",
+    "keyword" : ""
+  }
+}

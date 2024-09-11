@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "mysql -u root -p openapply_development < db\/oa_db\/reference.sql",
+    "dontautoexpand" : true,
+    "uid" : "90594782-C2A6-4157-9EFB-C0FADCECC11F",
+    "name" : "Restore from reference.sql",
+    "keyword" : ""
+  }
+}

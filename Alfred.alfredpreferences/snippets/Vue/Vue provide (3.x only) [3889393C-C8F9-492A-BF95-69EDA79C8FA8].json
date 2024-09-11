@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "\/\/ app 是最外層元件，可以直接透過 provide 傳遞資料到最內層元件 userComponent\n\/\/ 使用方式為 app 加上 provide, userComponent 加上 inject\n\nconst app = Vue.createApp({\n  provide() {\n    return {\n      user: this.user,\n    }\n  }\n})\n\nconst userComponent = {\n  inject: ['user'],\n  template: `<div>\n    {{ user.name }}\n    {{ user.uuid }}\n  <\/div>`,\n  created() {\n    console.log(this.user);\n  }\n}\n\n",
+    "dontautoexpand" : true,
+    "uid" : "3889393C-C8F9-492A-BF95-69EDA79C8FA8",
+    "name" : "Vue provide (3.x only)",
+    "keyword" : ""
+  }
+}

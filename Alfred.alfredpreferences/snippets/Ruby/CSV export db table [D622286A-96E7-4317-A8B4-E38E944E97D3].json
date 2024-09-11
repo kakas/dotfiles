@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "column_names = PamojaCourseEvent.column_names\nCSV.open(Rails.root.join('tmp\/pamoja_course_events.csv'), 'w') do |csv|\n  csv << column_names\n  PamojaCourseEvent.pluck(*column_names).each do |info|\n    csv << info\n  end\n  nil # prevent log all events\nend",
+    "dontautoexpand" : true,
+    "uid" : "D622286A-96E7-4317-A8B4-E38E944E97D3",
+    "name" : "CSV export db table",
+    "keyword" : ""
+  }
+}

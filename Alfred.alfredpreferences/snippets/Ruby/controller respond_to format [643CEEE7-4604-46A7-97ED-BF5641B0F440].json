@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "respond_to do |format|\n  format.json { render json: @users }\n  format.html { render body: nil }\nend",
+    "dontautoexpand" : true,
+    "uid" : "643CEEE7-4604-46A7-97ED-BF5641B0F440",
+    "name" : "controller respond_to format",
+    "keyword" : ""
+  }
+}

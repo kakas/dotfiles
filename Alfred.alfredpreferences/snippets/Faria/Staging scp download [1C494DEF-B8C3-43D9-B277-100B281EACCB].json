@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "scp openapply-stage-standalone:\/srv\/openapply-devel-01\/current\/tmp\/remote_file local_file",
+    "dontautoexpand" : true,
+    "uid" : "1C494DEF-B8C3-43D9-B277-100B281EACCB",
+    "name" : "Staging scp download",
+    "keyword" : ""
+  }
+}

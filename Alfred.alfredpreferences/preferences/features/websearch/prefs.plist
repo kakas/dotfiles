@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>D5DC0C86-ECC3-477B-B46A-EBC462D79DA5</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>net</string>
+			<key>text</key>
+			<string>Netflix</string>
+			<key>url</key>
+			<string>https://www.netflix.com/browse</string>
+		</dict>
+		<key>E4A36459-85A3-4547-855F-6B01B5F7E699</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>routes</string>
+			<key>text</key>
+			<string>rails routes</string>
+			<key>url</key>
+			<string>http://faria.oa.test/rails/info/routes</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{isodate:yyyyMMddHHmmss}",
+    "dontautoexpand" : true,
+    "uid" : "951D19F0-F4FA-40E1-A429-8EEA9D375948",
+    "name" : "timestamp - num",
+    "keyword" : ""
+  }
+}

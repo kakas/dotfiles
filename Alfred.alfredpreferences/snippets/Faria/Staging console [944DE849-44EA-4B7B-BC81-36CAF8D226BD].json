@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "RAILS_ENV=staging bundle exec rails console",
+    "dontautoexpand" : true,
+    "uid" : "944DE849-44EA-4B7B-BC81-36CAF8D226BD",
+    "name" : "Staging console",
+    "keyword" : ""
+  }
+}

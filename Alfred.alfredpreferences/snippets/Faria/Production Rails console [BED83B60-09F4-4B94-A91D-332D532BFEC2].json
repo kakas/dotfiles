@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "RAILS_ENV=production bundle exec rails console",
+    "dontautoexpand" : true,
+    "uid" : "BED83B60-09F4-4B94-A91D-332D532BFEC2",
+    "name" : "Production Rails console",
+    "keyword" : ""
+  }
+}

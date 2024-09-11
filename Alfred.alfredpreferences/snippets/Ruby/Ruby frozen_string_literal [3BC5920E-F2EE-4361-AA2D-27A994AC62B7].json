@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "# frozen_string_literal: true\n",
+    "dontautoexpand" : true,
+    "uid" : "3BC5920E-F2EE-4361-AA2D-27A994AC62B7",
+    "name" : "Ruby frozen_string_literal",
+    "keyword" : ""
+  }
+}

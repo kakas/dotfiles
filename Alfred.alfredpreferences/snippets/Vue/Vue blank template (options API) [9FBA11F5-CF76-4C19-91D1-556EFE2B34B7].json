@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "<template>\n  <div><\/div>\n<\/template>\n\n<script>\nimport { instance as axios } from 'common\/RequestService'\nimport Select2 from 'components\/Select2.vue'\n\nexport default {\n  components: {  },\n  props: {\n    pamojaCourseId: {\n      type: Number,\n      required: true,\n    },\n  },\n  data() {\n    return {\n    }\n  },\n  created() {\n    const params = { student_id: this.studentId }\n    axios.get(`\/admin\/pamoja_courses\/${this.pamojaCourseId}`, { params })\n      .then(res => {\n        this.pamojaCourse = { ...res.data }\n      })\n  },\n  methods: {\n  }\n}\n<\/script>\n\n<style lang=\"scss\" scoped>\n<\/style>\n",
+    "dontautoexpand" : true,
+    "uid" : "9FBA11F5-CF76-4C19-91D1-556EFE2B34B7",
+    "name" : "Vue blank template (options API)",
+    "keyword" : ""
+  }
+}

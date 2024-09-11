@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "## TITLE\n\n### Endpoint\n\nGET \/admin\/crm\/drips\nPUT \/admin\/crm\/drips\/:id\/\n\n### Query Params\n\n{\n  email_campaign_id: Integer, # EmailCampaign ID\n}\n\n### Data Params\n\n{\n}\n\n### Response (200)\n\n{\n  \"drips\": [\n    {\n      \"id\": Integer,\n      \"title\": String,\n    },\n  ],\n}\n\n",
+    "dontautoexpand" : true,
+    "uid" : "F5F6500D-68A0-48F7-9634-203BC25E8640",
+    "name" : "API endpoint spec",
+    "keyword" : ""
+  }
+}

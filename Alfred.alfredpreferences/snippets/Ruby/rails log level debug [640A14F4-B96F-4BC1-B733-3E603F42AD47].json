@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "# ActiveRecord::Base.verbose_query_logs = true\nRails.logger.level = :debug",
+    "dontautoexpand" : true,
+    "uid" : "640A14F4-B96F-4BC1-B733-3E603F42AD47",
+    "name" : "rails log level debug",
+    "keyword" : ""
+  }
+}

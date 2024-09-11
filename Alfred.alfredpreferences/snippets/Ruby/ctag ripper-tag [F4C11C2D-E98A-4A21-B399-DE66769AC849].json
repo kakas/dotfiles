@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "rm tags; ripper-tags -R --exclude=vendor",
+    "dontautoexpand" : true,
+    "uid" : "F4C11C2D-E98A-4A21-B399-DE66769AC849",
+    "name" : "ctag ripper-tag",
+    "keyword" : ""
+  }
+}

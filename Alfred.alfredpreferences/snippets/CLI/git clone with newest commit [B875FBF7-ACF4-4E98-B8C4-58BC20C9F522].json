@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "git clone --branch master --single-branch --depth 1 git@github.com:eduvo\/openapply.git ",
+    "dontautoexpand" : true,
+    "uid" : "B875FBF7-ACF4-4E98-B8C4-58BC20C9F522",
+    "name" : "git clone with newest commit",
+    "keyword" : ""
+  }
+}

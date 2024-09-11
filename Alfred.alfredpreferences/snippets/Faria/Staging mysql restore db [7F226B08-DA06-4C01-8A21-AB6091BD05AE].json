@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "mysql --host=openapply-ca-stage.cgi3baj8utl4.ca-central-1.rds.amazonaws.com -u master -p openapply-devel-07 < tmp\/openapply-devel-05.sql",
+    "dontautoexpand" : true,
+    "uid" : "7F226B08-DA06-4C01-8A21-AB6091BD05AE",
+    "name" : "Staging mysql restore db",
+    "keyword" : ""
+  }
+}

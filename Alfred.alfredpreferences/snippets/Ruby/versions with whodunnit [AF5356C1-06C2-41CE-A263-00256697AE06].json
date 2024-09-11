@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "user.versions.map do |version|\n  version.changeset.merge(whodunnit: version.whodunnit, created_at: version.created_at)\nend\n",
+    "dontautoexpand" : true,
+    "uid" : "AF5356C1-06C2-41CE-A263-00256697AE06",
+    "name" : "versions with whodunnit",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "for f in *.mkv; do ffmpeg -i \"$f\" -c copy \"${f%.mkv}.mp4\"; done",
+    "dontautoexpand" : true,
+    "uid" : "E7D8A8D0-B908-4C25-80AC-F2D6704EA163",
+    "name" : "ffmpeg batch mkv to mp4",
+    "keyword" : ""
+  }
+}

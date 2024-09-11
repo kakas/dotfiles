@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "# Add gem \"benchmark-ips\" to Gemfile\nrequire 'benchmark\/ips'\n\nActiveRecord::Base.logger = nil\n\nBenchmark.ips do |x|\n  # x.config(time: 240, warmup: 60)\n\n  x.report('example a') do\n    # ... \n  end\n  x.report('example b') do\n    # ...\n  end\n\n  x.compare!\nend",
+    "dontautoexpand" : true,
+    "uid" : "AB3134C8-C90A-49A9-B76D-79E89EBE787A",
+    "name" : "benchmark ips",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "PaperTrail.request(whodunnit: 'PAM-888') do\n  # ...\nend",
+    "dontautoexpand" : true,
+    "uid" : "074F82F5-7DCA-43FD-A167-54537F76A44F",
+    "name" : "paper_trail whodunnit",
+    "keyword" : ""
+  }
+}

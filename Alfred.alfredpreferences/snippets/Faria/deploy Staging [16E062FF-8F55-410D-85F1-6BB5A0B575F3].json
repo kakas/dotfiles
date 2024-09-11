@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "STAGE_NO=01 bundle exec cap stage deploy",
+    "dontautoexpand" : true,
+    "uid" : "16E062FF-8F55-410D-85F1-6BB5A0B575F3",
+    "name" : "deploy Staging",
+    "keyword" : ""
+  }
+}

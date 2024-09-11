@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "require 'open3'\n\njson_paths = %w[\n  13586599.json\n  14373217.json\n  14470647.json\n  14516862.json\n  14522051.json\n  14522052.json\n]\n\n# localhost console\nremote_host = \"openapply-ca-prod-app-01\"\nremote_file_path = \"\/srv\/openapply\/current\/tmp\"\n\njson_paths.map do |json_path|\n  upload_command = \"scp #{json_path} #{remote_host}:#{remote_file_path}\/#{json_path}\"\n  stdout, stderr, status = Open3.capture3(upload_command)\nend\n",
+    "dontautoexpand" : true,
+    "uid" : "59220952-84EF-4E51-A073-8A6A7425637A",
+    "name" : "Production CA scp upload Ruby",
+    "keyword" : ""
+  }
+}

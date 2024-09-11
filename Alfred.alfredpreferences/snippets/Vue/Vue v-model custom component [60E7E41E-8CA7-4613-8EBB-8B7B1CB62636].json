@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "<template>\n  <div>\n    <div><strong>Withdrawn Additional Information<\/strong><\/div>\n    <textarea\n      :value=\"value\"\n      @input=\"$emit('input', $event.target.value)\" \/\/ method_1\n      @input=\"handleInput\" \/\/ method_2\n    \/>\n  <\/div>\n<\/template>\n\n<script>\nexport default {\n  props: {\n    value: {\n      type: String,\n      required: false,\n      default: '',\n    },\n  },\n  emits: ['input'],\n  \/\/ method_2\n  methods: {\n    handleInput(value) {\n      this.$emit('input', value)\n    }\n  }\n}\n<\/script>\n\n<style lang=\"scss\" scoped>\n<\/style>\n\n",
+    "dontautoexpand" : true,
+    "uid" : "60E7E41E-8CA7-4613-8EBB-8B7B1CB62636",
+    "name" : "Vue v-model custom component",
+    "keyword" : ""
+  }
+}

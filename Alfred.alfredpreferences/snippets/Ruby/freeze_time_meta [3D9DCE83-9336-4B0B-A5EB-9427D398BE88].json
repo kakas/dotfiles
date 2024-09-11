@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "RSpec.configure do |config|\n  config.around(:each, :freeze_time_meta) do |example|\n    freeze_time do\n      example.run\n    end\n  end\nend\n",
+    "dontautoexpand" : true,
+    "uid" : "3D9DCE83-9336-4B0B-A5EB-9427D398BE88",
+    "name" : "freeze_time_meta",
+    "keyword" : ""
+  }
+}

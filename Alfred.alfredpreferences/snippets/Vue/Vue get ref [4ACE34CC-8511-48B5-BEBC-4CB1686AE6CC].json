@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "<input type=\"text\" ref=\"inputDom\">\n<card ref=\"crad\"><\/card>\n\nmounted() {\n  \/\/ 可以直接操作 DOM\n  this.$refs.inputDom.focus()\n\n  \/\/ 也可以直接操作元件裡面的資料\n  \/\/ 譬如 card 是個 component, 裡面有一個 data 為 title\n  this.$refs.card.title = '更換標題'\n}",
+    "dontautoexpand" : true,
+    "uid" : "4ACE34CC-8511-48B5-BEBC-4CB1686AE6CC",
+    "name" : "Vue get $ref",
+    "keyword" : ""
+  }
+}

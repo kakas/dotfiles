@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "it \"renders the index template\" do\n  expect(subject).to render_template(:index)\n  expect(subject).to render_template(\"index\")\n  expect(subject).to render_template(\"gadgets\/index\")\nend",
+    "dontautoexpand" : true,
+    "uid" : "0D4A8809-33E9-4F01-B0BB-799656EE7B51",
+    "name" : "render_template",
+    "keyword" : ""
+  }
+}

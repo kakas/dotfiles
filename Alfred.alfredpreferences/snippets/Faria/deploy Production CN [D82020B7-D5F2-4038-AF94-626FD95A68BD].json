@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "BRANCH=master bundle exec cap cn-production deploy",
+    "dontautoexpand" : true,
+    "uid" : "D82020B7-D5F2-4038-AF94-626FD95A68BD",
+    "name" : "deploy Production CN",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "langs = %w(de-DE en-GB en-US es-ES zh-CN zh-TW)\nresult = langs.each_with_object({}) do |lang, obj|\n  file = File.read(Rails.root.join(\"config\/locales\/#{lang}.yml\"))\n  yaml = YAML.load(file)\n  obj[lang] = yaml.dig(lang, 'dashboard_activity', 'student', 'update_student_flags')\nend\nap result",
+    "dontautoexpand" : true,
+    "uid" : "CEA5F47E-6B28-499A-A2BE-4DDF43004FA9",
+    "name" : "Yaml locales check",
+    "keyword" : ""
+  }
+}

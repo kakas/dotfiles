@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "include Scientist\n\nscience \"welcome_email\" do |experiment|\n  experiment.use do\n  end\n\n  experiment.try do\n  end\n\n  experiment.compare do |control, candidate|\n  end\nend",
+    "dontautoexpand" : true,
+    "uid" : "F5B5B150-D47B-48B4-9979-8142D0D90629",
+    "name" : "scienist template",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "~\/github\/FlameGraph\/flamegraph.pl tmp\/prof_flame.flame --countname=ms --height=22 --color=java > import_before.svg",
+    "dontautoexpand" : true,
+    "uid" : "96344C2F-3E5A-4368-BD4A-A3C9B9D85444",
+    "name" : "FlameGraph create",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "expect(response).to have_http_status(:success)",
+    "dontautoexpand" : true,
+    "uid" : "B8EB036B-D5A6-4AD8-9B22-25DA26CBF3FB",
+    "name" : "Rspec http_status",
+    "keyword" : ""
+  }
+}

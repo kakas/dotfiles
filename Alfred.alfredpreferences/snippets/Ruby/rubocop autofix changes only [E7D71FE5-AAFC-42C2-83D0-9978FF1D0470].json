@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "git diff --name-only develop | xargs rubocop -a",
+    "dontautoexpand" : true,
+    "uid" : "E7D71FE5-AAFC-42C2-83D0-9978FF1D0470",
+    "name" : "rubocop autofix changes only",
+    "keyword" : ""
+  }
+}

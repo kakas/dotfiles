@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "<div id=\"target\"><\/div>\n\n<!-- 被 teleport 包住的 dom 會被塞進去 #target 裡面 -->\n<teleport to=\"#target\">\n  <div class=\"alert alert-danger\">被招喚的元素<\/div>\n<\/teleport>\n\n  <!-- 也可以用在網頁的 title 上 -->\n  <teleport to=\"title\"> - 新增的標題片段<\/teleport>\n\n",
+    "dontautoexpand" : true,
+    "uid" : "DA7A63EE-3098-44E2-B8F1-3E2E2600D0D3",
+    "name" : "Vue teleport",
+    "keyword" : ""
+  }
+}

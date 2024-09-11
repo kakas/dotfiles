@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "apt-get update && rm -rf \/var\/lib\/apt\/lists\/*",
+    "dontautoexpand" : true,
+    "uid" : "41EF70A5-6FFC-4B64-BA2F-BE6CA12D8435",
+    "name" : "apt-get update cache clean",
+    "keyword" : ""
+  }
+}
